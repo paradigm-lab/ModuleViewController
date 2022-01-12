@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/sis")
 public class SisController {
 
     @ResponseBody
@@ -16,6 +17,7 @@ public class SisController {
     @ResponseBody
     @RequestMapping("/book")
     public String getBooks() {
+        System.out.println("This is getBooks() ...");
         return "Math book";
     }
 }
