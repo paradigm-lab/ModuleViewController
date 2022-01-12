@@ -12,4 +12,10 @@ public class SisController {
     public String getMakeUpKit() {
         return "Just Take my make up kit";
     }
+
+    @ResponseBody
+    @RequestMapping("/book")
+    public String getBooks() {
+        return "Math book";
+    }
 }
