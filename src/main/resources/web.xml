@@ -22,8 +22,8 @@
         <servlet-name>dad-frontcontroller-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-            <param-name>configurationContext</param-name>
-            <param-value>dad-frontcontroller-servlet</param-value>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>dad-frontcontroller-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
