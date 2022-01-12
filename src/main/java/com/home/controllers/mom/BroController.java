@@ -8,7 +8,7 @@ public class BroController {
 
     @RequestMapping("/cricketbat")
     public String giveCricketBat(){
-        return "Hey man.. this is your cricket bat";
+        return "/views/MRFCricketbat.jsp";
     }
 
 }
