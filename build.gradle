@@ -6,7 +6,7 @@ plugins {
 
 apply plugin: 'war'
 
-group 'spring.love.calculator'
+group 'com.home.controllers.SyncApplication'
 version '1.0-SNAPSHOT'
 
 war {
