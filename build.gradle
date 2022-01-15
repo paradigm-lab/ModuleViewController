@@ -25,6 +25,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.postgresql:postgresql'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'org.springframework:spring-webmvc:5.3.15'
     //providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
 }
