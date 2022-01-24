@@ -1,4 +1,4 @@
-package spring.love.calculator;
+package spring.love.calculator.config;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.XmlWebApplicationContext;
