@@ -21,6 +21,6 @@ public class LoveCalculatorApplicationInitializer implements WebApplicationIniti
 
 
         // Register the dispatcher servlet with the servlet context object
-
+        servletContext.addServlet("myDispatcherServlet", dispatcherServlet);
     }
 }
