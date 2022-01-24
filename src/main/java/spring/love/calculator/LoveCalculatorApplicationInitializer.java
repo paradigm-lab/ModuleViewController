@@ -9,6 +9,10 @@ public class LoveCalculatorApplicationInitializer implements WebApplicationIniti
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        System.out.println("My custom class on startup method called >>>");
+
+        // Create a dispatcher servlet object
+
+        // Register the dispatcher servlet with the servlet context object
+
     }
 }
