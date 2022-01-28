@@ -9,15 +9,16 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-public class LoveCalculatorApplicationInitializer implements WebApplicationInitializer {
+public class LoveCalculatorApplicationInitializer {
+
+    /*
+        implements WebApplicationInitializer
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-
-        /*
         XmlWebApplicationContext webApplicationContext = new XmlWebApplicationContext();
         webApplicationContext.setConfigLocation("classpath:application-config.xml");
-        */
+
 
         // Using the java approach to register the ApplicationContext
         AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
@@ -33,4 +34,5 @@ public class LoveCalculatorApplicationInitializer implements WebApplicationIniti
         myCustomDispatcherServlet.setLoadOnStartup(1);
         myCustomDispatcherServlet.addMapping("/mywebsite.com/*");
     }
+    */
 }
