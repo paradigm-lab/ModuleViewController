@@ -12,7 +12,8 @@ public class LCAppIntializer extends AbstractAnnotationConfigDispatcherServletIn
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        Class arr[] = {LoveCalculatorAppConfig.class};
+        return arr;
     }
 
     @Override
