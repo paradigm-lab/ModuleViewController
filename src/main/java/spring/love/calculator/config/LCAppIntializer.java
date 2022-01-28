@@ -17,6 +17,7 @@ public class LCAppIntializer extends AbstractAnnotationConfigDispatcherServletIn
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0];
+        String arr[] = {"/mywebsite.com/*"};
+        return arr;
     }
 }
