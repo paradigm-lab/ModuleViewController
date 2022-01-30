@@ -10,10 +10,13 @@ import spring.love.calculator.api.UserInfoDTO;
 public class LCAppController {
 
     @RequestMapping("/")
-    public String showHomepage() {
+    public String showHomepage(Model model) {
         /*
           * Read the default property by fetching it from the dto
          */
+        
+        UserInfoDTO userInfoDTO = new UserInfoDTO();
+        model.addAttribute("userInfo", userInfoDTO);
 
         return "home-page";
     }
