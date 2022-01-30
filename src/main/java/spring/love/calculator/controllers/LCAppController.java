@@ -18,6 +18,9 @@ public class LCAppController {
     public String showResult(UserInfoDTO userInfoDTO, Model model) {
         System.out.println("User Name is: " + userInfoDTO.getUserName());
         System.out.println("Crush Name is: " + userInfoDTO.getCrushName());
+
+        model.addAttribute("userInfo", userInfoDTO);
+
         return "result-page";
     }
 
