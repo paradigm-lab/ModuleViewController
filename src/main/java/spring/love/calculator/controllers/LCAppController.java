@@ -11,11 +11,17 @@ public class LCAppController {
 
     @RequestMapping("/")
     public String showHomepage() {
+        /*
+          * Read the default property by fetching it from the dto
+         */
+
         return "home-page";
     }
 
     @RequestMapping("/process-homepage")
     public String showResult(UserInfoDTO userInfoDTO, Model model) {
+
+        // Writing the value to the properties  by fetching from the url
         System.out.println("User Name is: " + userInfoDTO.getUserName());
         System.out.println("Crush Name is: " + userInfoDTO.getCrushName());
 
