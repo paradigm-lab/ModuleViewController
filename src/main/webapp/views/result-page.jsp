@@ -10,11 +10,11 @@
     <hr/>
 
     <p>
-        User Name is: ${userName}
+        User Name is: ${userInfo.userName}
     </p>
 
     <p>
-        Crush Name is: ${crushName}
+        Crush Name is: ${userInfo.crushName}
     </p>
 </body>
 </html>
