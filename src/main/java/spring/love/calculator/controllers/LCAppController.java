@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import spring.love.calculator.api.UserInfoDTO;
 
 @Controller
 public class LCAppController {
@@ -14,6 +15,14 @@ public class LCAppController {
     }
 
     @RequestMapping("/process-homepage")
+    public String showResult(UserInfoDTO userInfoDTO, Model model) {
+        System.out.println("User Name is: " + userInfoDTO.getUserName());
+        System.out.println("Crush Name is: " + userInfoDTO.getCrushName());
+        return "result-page";
+    }
+
+    /*
+    @RequestMapping("/process-homepage")
     public String showResultPage(@RequestParam("userName") String userName1, @RequestParam("crushName") String crushName1, Model model) {
         System.out.println("User name is: " + userName1);
         System.out.println("Crush name is: " + crushName1);
@@ -23,5 +32,6 @@ public class LCAppController {
 
         return "result-page";
     }
+    */
 
 }
