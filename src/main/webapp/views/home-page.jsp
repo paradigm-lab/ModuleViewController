@@ -8,6 +8,7 @@
 
     <h1 align="center">Love Calculator</h1>
 
+<div align="center">
     <p>
         <label for="yn"> Your Name: </label>
         <input type="text" id="yn"/>
@@ -18,6 +19,9 @@
         <label for="cn">Crush Name: </label>
         <input type="text" id="cn"/>
     </p>
+
+    <input type="submit" value="calculate" />
+</div>
 
 </body>
 </html>
