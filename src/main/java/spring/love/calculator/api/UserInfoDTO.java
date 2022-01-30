@@ -1,8 +1,8 @@
 package spring.love.calculator.api;
 
 public class UserInfoDTO {
-    private String userName;
-    private String crushName;
+    private String userName = "Mr x";
+    private String crushName = "Miss y";
 
 
     /*
