@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <h1 align="left">Love Calculator</h1>
+    <h1 align="center">Love Calculator</h1>
 
 </body>
 </html>
