@@ -9,6 +9,12 @@
     <h1 align="center">Love calculator</h1>
     <hr/>
 
-    <p> So I am getting my result page </p>
+    <p>
+        User Name is: ${userName}
+    </p>
+
+    <p>
+        Crush Name is: ${crushName}
+    </p>
 </body>
 </html>
