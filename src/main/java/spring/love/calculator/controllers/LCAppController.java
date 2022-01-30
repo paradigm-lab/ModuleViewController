@@ -11,4 +11,10 @@ public class LCAppController {
         return "home-page";
     }
 
+    @RequestMapping("/process-homepage")
+    public String showResultPage() {
+
+        return "result-page";
+    }
+
 }
