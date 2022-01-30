@@ -14,7 +14,7 @@ public class LCAppController {
         /*
           * Read the default property by fetching it from the dto
          */
-        
+
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         model.addAttribute("userInfo", userInfoDTO);
 
