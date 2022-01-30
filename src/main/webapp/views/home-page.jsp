@@ -9,11 +9,12 @@
 
 
     <h1 align="center">Love Calculator</h1>
+    <hr/>
 
 <form action = "process-homepage" method="get">
     <div align="center">
         <p>
-            <label for="yn"> Your Name: </label>
+            <label for="yn">Your Name: &nbsp</label>
             <input type="text" id="yn" name = "userName"/>
         </p>
 
