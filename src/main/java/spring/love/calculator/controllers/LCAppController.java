@@ -2,6 +2,7 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import spring.love.calculator.api.UserInfoDTO;
@@ -9,17 +10,35 @@ import spring.love.calculator.api.UserInfoDTO;
 @Controller
 public class LCAppController {
 
+
+    @RequestMapping("/")
+    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto) {
+
+        return "home-page";
+    }
+
+    /*
     @RequestMapping("/")
     public String showHomepage(Model model) {
-        /*
-          * Read the default property by fetching it from the dto
-         */
+
+       // Read the default property by fetching it from the dto
+
 
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         model.addAttribute("userInfo", userInfoDTO);
 
         return "home-page";
     }
+    */
+
+
+    @RequestMapping("/process-homepage")
+    public String showResultPage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO) {
+
+        return "result-page";
+    }
+
+    /*
 
     @RequestMapping("/process-homepage")
     public String showResult(UserInfoDTO userInfoDTO, Model model) {
@@ -32,6 +51,8 @@ public class LCAppController {
 
         return "result-page";
     }
+
+     */
 
     /*
     @RequestMapping("/process-homepage")
