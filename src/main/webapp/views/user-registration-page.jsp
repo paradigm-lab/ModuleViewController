@@ -24,6 +24,16 @@
     <label>Password: </label>
     <form:password path="password" />
 
+    <br/>
+
+    <label>Country: </label>
+    <form:select path="countryName">
+        <form:option value="Ind" label="India"></form:option>
+        <form:option value="Usa" label="United States"></form:option>
+        <form:option value="Tz" label="Tanzania"></form:option>
+        <form:option value="Sa" label="South Africa"></form:option>
+    </form:select>
+
     </form:form>
 
 </body>
