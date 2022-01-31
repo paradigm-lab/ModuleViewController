@@ -11,7 +11,13 @@
     <h2> The details entered by you are: </h2>
     Name: ${userReg.name} <br/>
     User Name: ${userReg.userName} <br/>
-    Password: ${userReg.password} <br/>
+    Password:
+
+    <c:forEach var="pass" items="${userReg.password}">
+        ${pass}
+    </c:forEach>
+    <br/>
+
     Country: ${userReg.countryName} <br/>
     Hobbies:
     <c:forEach var="temp" items="${userReg.hobbies}">
