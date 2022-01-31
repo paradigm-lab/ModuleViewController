@@ -34,6 +34,14 @@
         <form:option value="Sa" label="South Africa"></form:option>
     </form:select>
 
+    <br/>
+
+    <label>Hobbies: </label>
+    Cricket: <form:checkbox path="hobbies" value="cricket" />
+    Reading: <form:checkbox path="hobbies" value="Reading" />
+    Travel: <form:checkbox path="hobbies" value="travel" />
+    Programming: <form:checkbox path="hobbies" value="programming" />
+
     </form:form>
 
 </body>
