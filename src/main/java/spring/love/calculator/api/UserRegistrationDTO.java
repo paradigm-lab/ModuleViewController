@@ -5,6 +5,7 @@ public class UserRegistrationDTO {
     private String userName;
     private char[] password;
     private String countryName;
+    private String[] hobbies;
 
     // The getter and setter
     public String getName() {
@@ -38,5 +39,14 @@ public class UserRegistrationDTO {
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
+
+    public String[] getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String[] hobbies) {
+        this.hobbies = hobbies;
+    }
+
 
 }
