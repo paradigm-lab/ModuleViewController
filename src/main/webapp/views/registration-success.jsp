@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,7 +13,12 @@
     User Name: ${userReg.userName} <br/>
     Password: ${userReg.password} <br/>
     Country: ${userReg.countryName} <br/>
-    Hobbies: ${userReg.hobbies} <br/>
+    Hobbies:
+    <c:forEach var="temp" items="${userReg.hobbies}">
+        ${temp}
+    </c:forEach>
+    <br/>
+
     Gender: ${userReg.gender} <br/>
 </body>
 </html>
