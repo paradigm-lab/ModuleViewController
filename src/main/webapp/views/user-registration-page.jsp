@@ -37,10 +37,16 @@
     <br/>
 
     <label>Hobbies: </label>
-    Cricket: <form:checkbox path="hobbies" value="cricket" />
-    Reading: <form:checkbox path="hobbies" value="Reading" />
-    Travel: <form:checkbox path="hobbies" value="travel" />
-    Programming: <form:checkbox path="hobbies" value="programming" />
+     <form:checkbox path="hobbies" value="cricket" /> Cricket
+     <form:checkbox path="hobbies" value="Reading" /> Reading
+     <form:checkbox path="hobbies" value="travel" /> Travel
+     <form:checkbox path="hobbies" value="programming" /> Programming
+
+    <br/>
+
+    <label>Gender: </label>
+    <form:radiobutton path="gender" value="male" /> Male
+    <form:radiobutton path="gender" value="female" /> Female
 
     </form:form>
 
