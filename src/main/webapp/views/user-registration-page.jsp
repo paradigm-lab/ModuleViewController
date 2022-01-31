@@ -50,5 +50,9 @@
 
     </form:form>
 
+    <br/>
+
+    <input type="submit" value="register">
+
 </body>
 </html>
