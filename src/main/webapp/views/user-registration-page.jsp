@@ -9,7 +9,7 @@
 <body>
     <h1 align="center"> Please register here </h1>
 
-    <form:form modelAttribute="userReg">
+    <form:form action="registration-success" method="GET" modelAttribute="userReg">
 
     <div align="center">
     <label>User: </label>
