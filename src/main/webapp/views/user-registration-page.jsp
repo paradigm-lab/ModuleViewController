@@ -9,7 +9,7 @@
 <body>
     <h1 align="center"> Please register here </h1>
 
-    <form:form >
+    <form:form modelAttribute="userReg">
 
     <label>User: </label>
     <form:input path="name" />
