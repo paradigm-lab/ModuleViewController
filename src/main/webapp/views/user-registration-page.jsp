@@ -14,6 +14,16 @@
     <label>User: </label>
     <form:input path="name" />
 
+    <br/>
+
+    <label>User Name: </label>
+    <form:input path="userName" />
+
+    <br/>
+
+    <label>Password: </label>
+    <form:password path="password" />
+
     </form:form>
 
 </body>
