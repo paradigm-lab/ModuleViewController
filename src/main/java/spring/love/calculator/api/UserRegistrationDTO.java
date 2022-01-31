@@ -4,7 +4,7 @@ public class UserRegistrationDTO {
     private String name;
     private String userName;
     private char[] password;
-
+    private String countryName;
 
     // The getter and setter
     public String getName() {
@@ -30,4 +30,13 @@ public class UserRegistrationDTO {
     public void setPassword(char[] password) {
         this.password = password;
     }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
 }
