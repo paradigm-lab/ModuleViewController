@@ -11,6 +11,7 @@
 
     <form:form modelAttribute="userReg">
 
+    <div align="center">
     <label>User: </label>
     <form:input path="name" />
 
@@ -48,11 +49,14 @@
     <form:radiobutton path="gender" value="male" /> Male
     <form:radiobutton path="gender" value="female" /> Female
 
-    </form:form>
 
     <br/>
 
     <input type="submit" value="register">
+
+    </div>
+
+    </form:form>
 
 </body>
 </html>
