@@ -11,11 +11,11 @@ public class UserInfoDTO {
     @Size(min = 3, max = 15, message = "* Your Name should have char between 3-15")
     private String userName; // = "Mr x";
     private String crushName; //= "Miss y";
-
+    private boolean termAndCondition;
 
     /*
-        The getter and setter method
-     */
+            The getter and setter method
+         */
     public String getUserName() {
         return userName;
     }
@@ -30,6 +30,14 @@ public class UserInfoDTO {
 
     public void setCrushName(String crushName) {
         this.crushName = crushName;
+    }
+
+    public boolean isTermAndCondition() {
+        return termAndCondition;
+    }
+
+    public void setTermAndCondition(boolean termAndCondition) {
+        this.termAndCondition = termAndCondition;
     }
 
     @Override
