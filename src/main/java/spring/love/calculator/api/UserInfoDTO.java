@@ -1,6 +1,10 @@
 package spring.love.calculator.api;
 
+import javax.validation.constraints.NotBlank;
+
 public class UserInfoDTO {
+
+    @NotBlank(message = " * User Name can't be blank")
     private String userName; // = "Mr x";
     private String crushName; //= "Miss y";
 
