@@ -7,8 +7,8 @@ import javax.validation.constraints.Size;
 public class UserInfoDTO {
 
     @NotBlank(message = " * Your Name can't be blank")
-    @Min(value = 3, message = "* your Name should have at least 3 characters")
-    @Size(min = 3, max = 15, message = "* Your Name should have at least 3 Character")
+    // @Min(value = 3, message = "* your Name should have at least 3 characters")
+    @Size(min = 3, max = 15, message = "* Your Name should have char between 3-15")
     private String userName; // = "Mr x";
     private String crushName; //= "Miss y";
 
