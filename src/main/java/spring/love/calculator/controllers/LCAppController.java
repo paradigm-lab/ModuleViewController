@@ -40,6 +40,8 @@ public class LCAppController {
 
         if (result.hasErrors()) {
             System.out.println("My form has errors...");
+
+            return "home-page";
         }
 
         return "result-page";
