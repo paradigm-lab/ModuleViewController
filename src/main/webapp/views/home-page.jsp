@@ -40,6 +40,7 @@
         <p>
             <form:checkbox path="termAndCondition" id = "check"/>
             <label> I am agreeing that this is for fun</label>
+            <form:errors path="termAndCondition" />
         </p>
 
         <input type="submit" value="calculate" />
