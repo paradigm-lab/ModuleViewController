@@ -10,6 +10,9 @@
     <style type="text/css">
         .errors{
             color: red;
+            position: fixed;
+            text-align: left;
+            margin-left: 30px;
         }
     </style>
 
