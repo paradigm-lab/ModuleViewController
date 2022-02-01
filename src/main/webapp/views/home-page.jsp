@@ -18,6 +18,7 @@
         <p>
             <label for="yn">Your Name: &nbsp</label>
             <form:input  id="yn" path = "userName"/>
+            <form:errors path="userName" />
         </p>
 
 
