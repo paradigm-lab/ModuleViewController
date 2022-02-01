@@ -1,5 +1,6 @@
 package spring.love.calculator.api;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -11,6 +12,7 @@ public class UserInfoDTO {
     @Size(min = 3, max = 15, message = "* Your Name should have char between 3-15")
     private String userName; // = "Mr x";
     private String crushName; //= "Miss y";
+    @AssertTrue(message = "You have to agree to use our app")
     private boolean termAndCondition;
 
     /*
