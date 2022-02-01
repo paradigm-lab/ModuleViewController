@@ -11,8 +11,12 @@ public class UserInfoDTO {
     // @Min(value = 3, message = "* your Name should have at least 3 characters")
     @Size(min = 3, max = 15, message = "* Your Name should have char between 3-15")
     private String userName; // = "Mr x";
+
+    @NotBlank(message = " * Crush Name can't be blank")
+    @Size(min = 3, max = 15, message = "* Crush Name should have char between 3-15")
     private String crushName; //= "Miss y";
-    @AssertTrue(message = "You have to agree to use our app")
+
+    @AssertTrue(message = "Agree to use our app")
     private boolean termAndCondition;
 
     /*
