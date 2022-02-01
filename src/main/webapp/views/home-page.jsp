@@ -35,6 +35,7 @@
         <p>
             <label for="cn">Crush Name: </label>
             <form:input id="cn" path = "crushName"/>
+            <form:errors path="crushName" cssClass="errors" />
         </p>
 
         <p>
