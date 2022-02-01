@@ -37,6 +37,11 @@
             <form:input id="cn" path = "crushName"/>
         </p>
 
+        <p>
+            <form:checkbox path="termAndCondition" id = "check"/>
+            <label> I am agreeing that this is for fun</label>
+        </p>
+
         <input type="submit" value="calculate" />
     </div>
 </form:form>
