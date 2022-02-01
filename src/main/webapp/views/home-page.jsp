@@ -14,7 +14,7 @@
     <h1 align="center">Love Calculator</h1>
     <hr/>
 
-<form:form action = "process-homepage" method="get" modelAttribute="userInfo" onsubmit="return true">
+<form:form action = "process-homepage" method="get" modelAttribute="userInfo" onsubmit="return validateUserName()">
     <div align="center">
         <p>
             <label for="yn">Your Name: &nbsp</label>
@@ -30,6 +30,20 @@
         <input type="submit" value="calculate" />
     </div>
 </form:form>
+
+<script type="text/javascript">
+
+    function validateUserName() {
+        var userName = document.getElementById("yn").value;
+        if (userName.length < 1) {
+            alert("You name should have at least one character");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+</script>
 
 </body>
 </html>
