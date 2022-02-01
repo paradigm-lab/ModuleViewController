@@ -45,7 +45,7 @@
 
     function validateUserName() {
         var userName = document.getElementById("yn").value;
-        if (userName.length < 1) {
+        if (userName.length < 3) {
             alert("You name should have at least one character");
             return false;
         } else {
