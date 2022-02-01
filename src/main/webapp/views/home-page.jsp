@@ -18,13 +18,13 @@
     <div align="center">
         <p>
             <label for="yn">Your Name: &nbsp</label>
-            <form:input type="text" id="yn" path = "userName"/>
+            <form:input  id="yn" path = "userName"/>
         </p>
 
 
         <p>
             <label for="cn">Crush Name: </label>
-            <form:input type="text" id="cn" path = "crushName"/>
+            <form:input id="cn" path = "crushName"/>
         </p>
 
         <input type="submit" value="calculate" />
