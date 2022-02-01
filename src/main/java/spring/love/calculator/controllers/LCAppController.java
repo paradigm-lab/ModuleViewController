@@ -40,6 +40,8 @@ public class LCAppController {
     @RequestMapping("/process-homepage")
     public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
 
+        System.out.println(userInfoDTO.isTermAndCondition());
+
         if (result.hasErrors()) {
             List<ObjectError> allErrors = result.getAllErrors();
             for (ObjectError temp : allErrors) {
