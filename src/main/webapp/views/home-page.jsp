@@ -6,6 +6,13 @@
 <html>
 <head>
     <title>Home Page</title>
+
+    <style type="text/css">
+        .errors{
+            color: red;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -18,7 +25,7 @@
         <p>
             <label for="yn">Your Name: &nbsp</label>
             <form:input  id="yn" path = "userName"/>
-            <form:errors path="userName" />
+            <form:errors path="userName" cssClass="errors"/>
         </p>
 
 
