@@ -58,12 +58,13 @@
         <h3>Communication</h3>
 
         <label>Email:</label>
-        <for:input path="communicationDTO" />
+        <form:input path="communicationDTO" />
 
     </div>
 
     <br />
-    <div>
+
+    <div align="center">
         <input type="submit" value="register">
     </div>
 
