@@ -26,11 +26,11 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
     }
 
     @Override
-    public String print(Phone object, Locale locale) {
+    public String print(Phone phone, Locale locale) {
 
         System.out.println("Inside the print method of the phoneNumberFormatter");
 
-        return null;
+        return phone.getCountryCode() + "-" + phone.getUserNumber();
     }
 
 }
