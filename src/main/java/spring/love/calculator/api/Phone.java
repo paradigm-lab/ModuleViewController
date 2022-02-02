@@ -27,7 +27,7 @@ public class Phone {
 
     @Override
     public String toString() {
-        return getCountryCode() + " " + getUserNumber();
+        return getCountryCode() + "-" + getUserNumber();
     }
 
 }
