@@ -8,6 +8,8 @@ public class UserRegistrationDTO {
     private String[] hobbies;
     private String gender;
 
+    private CommunicationDTO communicationDTO;
+
     // The getter and setter
     public String getName() {
         return name;
@@ -55,6 +57,14 @@ public class UserRegistrationDTO {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public CommunicationDTO getCommunicationDTO() {
+        return communicationDTO;
+    }
+
+    public void setCommunicationDTO(CommunicationDTO communicationDTO) {
+        this.communicationDTO = communicationDTO;
     }
 
 
