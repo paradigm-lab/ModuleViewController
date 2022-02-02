@@ -27,6 +27,9 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
 
     @Override
     public String print(Phone object, Locale locale) {
+
+        System.out.println("Inside the print method of the phoneNumberFormatter");
+
         return null;
     }
 
