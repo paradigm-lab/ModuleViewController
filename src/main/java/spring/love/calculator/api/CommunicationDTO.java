@@ -2,7 +2,7 @@ package spring.love.calculator.api;
 
 public class CommunicationDTO {
 
-    private String email = "collinsboniface1000@gmail.com";
+    private String email;
 
 
     // Getter and Setter methods
