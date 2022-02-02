@@ -12,7 +12,9 @@ public class RegistrationController {
 
     @RequestMapping("/register")
     public String showRegistrationPage(@ModelAttribute("userReg") UserRegistrationDTO dto) {
-        dto.setName("Collins");
+
+        System.out.println("Inside the showRegistrationPage method");
+
         return "user-registration-page";
     }
 
