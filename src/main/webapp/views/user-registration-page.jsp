@@ -58,7 +58,7 @@
         <h3>Communication</h3>
 
         <label>Email:</label>
-        <form:input path="communicationDTO" />
+        <form:input path="communicationDTO.email" />
 
     </div>
 
