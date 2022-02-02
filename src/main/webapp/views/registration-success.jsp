@@ -31,5 +31,8 @@
     Email: ${userReg.communicationDTO.email}
     <br />
 
+    Phone: ${userReg.communicationDTO.phone}
+    <br />
+
 </body>
 </html>

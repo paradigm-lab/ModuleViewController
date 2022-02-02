@@ -60,6 +60,8 @@
         <label>Email:</label>
         <form:input path="communicationDTO.email" />
 
+        <br />
+
         <label>Phone:</label>
         <form:input path="communicationDTO.phone" />
 
