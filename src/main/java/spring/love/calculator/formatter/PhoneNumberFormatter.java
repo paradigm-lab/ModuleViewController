@@ -14,13 +14,26 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
         System.out.println("Inside the parse method of the PhoneNumberFormatter");
 
         // Logic
+        Phone phone = new Phone();
+
         // Split the String received from the user
         String[] phoneNumberArray = completePhoneNumber.split("-");
 
-        // Extract the countryCode and set it to the phone class countryCodeProperty
-        Phone phone = new Phone();
-        phone.setCountryCode(phoneNumberArray[0]);
-        phone.setUserNumber(phoneNumberArray[1]);
+        // Whether the number consist of "-"
+        int index = completePhoneNumber.indexOf('-');
+        if (index == -1) {
+
+            // If the '-' is not found, then add 255 as the default country code
+            phone.setCountryCode("255");
+            phone.setUserNumber(phoneNumberArray[0]);
+
+
+        }   else {
+
+            // Extract the countryCode and set it to the phone class countryCodeProperty
+            phone.setCountryCode(phoneNumberArray[0]);
+            phone.setUserNumber(phoneNumberArray[1]);
+        }
 
         return phone;
     }
