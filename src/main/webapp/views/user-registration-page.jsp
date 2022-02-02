@@ -52,8 +52,19 @@
 
     <br/>
 
-    <input type="submit" value="register">
+    </div>
 
+    <div align="center">
+        <h3>Communication</h3>
+
+        <label>Email:</label>
+        <for:input path="communicationDTO" />
+
+    </div>
+
+    <br />
+    <div>
+        <input type="submit" value="register">
     </div>
 
     </form:form>
