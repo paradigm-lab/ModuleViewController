@@ -10,6 +10,11 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
 
     @Override
     public Phone parse(String text, Locale locale) throws ParseException {
+
+        System.out.println("Inside the parse method of the PhoneNumberFormatter");
+
+        // Logic
+
         return null;
     }
 
@@ -17,5 +22,5 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
     public String print(Phone object, Locale locale) {
         return null;
     }
-    
+
 }
