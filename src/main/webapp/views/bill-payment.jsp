@@ -10,17 +10,16 @@
 </head>
 <body>
 
-    <h1>Payment</h1>
+    <h1 align="center" >Payment</h1>
     <hr />
 
     <div align = "center">
         <label>Card Number:</label>
-        <form:input />
-
+        <input type="text" />
         <br/>
 
         <label>Amount: </label>
-        <form:input />
+        <input type="text" />
 
         <br />
     </div>
