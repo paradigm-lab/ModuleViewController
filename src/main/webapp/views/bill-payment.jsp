@@ -22,6 +22,8 @@
         <input type="text" />
 
         <br />
+
+        <input type="submit" />
     </div>
 
 </body>
