@@ -9,7 +9,7 @@ public class BillController {
     @RequestMapping("/bill")
     public String showBillPage() {
 
-        return "bill-payment.jsp";
+        return "bill-payment";
     }
 
 }
