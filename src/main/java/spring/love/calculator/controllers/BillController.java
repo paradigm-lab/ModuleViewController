@@ -12,4 +12,10 @@ public class BillController {
         return "bill-payment";
     }
 
+    @RequestMapping("/payment-successfully")
+    public String showPaymentSuccessfully() {
+
+        return "bill-successfully";
+    }
+
 }
