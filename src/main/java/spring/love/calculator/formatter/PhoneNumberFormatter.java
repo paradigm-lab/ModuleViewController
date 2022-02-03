@@ -21,11 +21,18 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
 
         // Whether the number consist of "-"
         int index = completePhoneNumber.indexOf('-');
-        if (index == -1) {
+
+        // If the string doesn't have a "-" or start with a "-" add 91 before it
+        if (index == -1 || completePhoneNumber.startsWith("-")) {
 
             // If the '-' is not found, then add 255 as the default country code
             phone.setCountryCode("255");
-            phone.setUserNumber(phoneNumberArray[0]);
+
+            if (completePhoneNumber.startsWith("-")) {
+                phone.setUserNumber(phoneNumberArray[1]);
+            }   else {
+                phone.setUserNumber(phoneNumberArray[0]);
+            }
 
 
         }   else {
