@@ -13,6 +13,7 @@
     <h1 align="center" >Payment</h1>
     <hr />
 
+<form action="bill-successfully" method="GET">
     <div align = "center">
         <label>Card Number:</label>
         <input type="text" />
@@ -25,6 +26,7 @@
 
         <input type="submit" />
     </div>
+</form>
 
 </body>
 </html>
