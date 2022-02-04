@@ -17,14 +17,15 @@
     <div align = "center">
         <label>Card Number:</label>
         <input type="text" />
-        <br/>
+        <br />
+        <br />
 
         <label>Amount: </label>
         <input type="text" />
-
+        <br />
         <br />
 
-        <input type="submit" />
+        <input type="submit" value="pay"/>
     </div>
 </form>
 
