@@ -1,6 +1,7 @@
 package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.BillDTO;
@@ -15,7 +16,7 @@ public class BillController {
     }
 
     @RequestMapping("/payment-successfully")
-    public String showPaymentSuccessfully() {
+    public String showPaymentSuccessfully(@ModelAttribute("userBill") BillDTO billDTO, BindingResult result) {
 
         return "bill-successfully";
     }
