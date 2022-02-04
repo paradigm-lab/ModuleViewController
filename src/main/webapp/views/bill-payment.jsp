@@ -10,10 +10,10 @@
 </head>
 <body>
 
-    <h1 align="center" >Payment</h1>
+    <h1 align="center" >Bill Payment</h1>
     <hr />
 
-<form action="bill-successfully" method="GET">
+<form action="bill-successfully" method="get" modelAttribute="userBill">
     <div align = "center">
         <label>Card Number:</label>
         <input type="text" />
@@ -25,7 +25,7 @@
         <br />
         <br />
 
-        <input type="submit" value="pay"/>
+        <input type="submit" value="Payment"/>
     </div>
 </form>
 
