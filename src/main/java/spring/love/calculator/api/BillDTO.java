@@ -1,6 +1,6 @@
 package spring.love.calculator.api;
 
-public class billDTO {
+public class BillDTO {
 
     // The class property
     private CreditCard card;
