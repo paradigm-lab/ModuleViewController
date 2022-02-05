@@ -12,6 +12,7 @@
     <h2>The detail entered by you are:</h2>
 
     Credit Card: ${userBill.card}
+    <br/>
     Amount: ${userBill.amount}
 
 </body>
