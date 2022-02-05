@@ -15,7 +15,7 @@ public class BillController {
         return "bill-payment";
     }
 
-    @RequestMapping("/payment-successfully")
+    @RequestMapping("/bill-successfully")
     public String showPaymentSuccessfully(@ModelAttribute("userBill") BillDTO billDTO, BindingResult result) {
 
         return "bill-successfully";
