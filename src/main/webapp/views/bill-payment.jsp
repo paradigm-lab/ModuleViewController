@@ -13,21 +13,21 @@
     <h1 align="center" >Bill Payment</h1>
     <hr />
 
-<form action="bill-successfully" method="get" modelAttribute="userBill">
+<form:form action="bill-successfully" method="get" modelAttribute="userBill">
     <div align = "center">
         <label>Card Number:</label>
-        <input type="text" />
+        <form:input type="text" path="card"/>
         <br />
         <br />
 
         <label>Amount: </label>
-        <input type="text" />
+        <form:input type="text" path="amount"/>
         <br />
         <br />
 
         <input type="submit" value="Payment"/>
     </div>
-</form>
+</form:form>
 
 </body>
 </html>
