@@ -16,12 +16,12 @@
 <form:form action="bill-successfully" method="get" modelAttribute="userBill">
     <div align = "center">
         <label>Card Number:</label>
-        <form:input type="text" path="card"/>
+        <form:input type="text" path="card.firstFourDigits" />
         <br />
         <br />
 
         <label>Amount: </label>
-        <form:input type="text" path="amount"/>
+        <form:input type="text" path="amount.billAmount"/>
         <br />
         <br />
 
