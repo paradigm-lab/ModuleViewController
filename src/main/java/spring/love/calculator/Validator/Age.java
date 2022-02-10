@@ -1,5 +1,6 @@
 package spring.love.calculator.Validator;
 
+import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
@@ -7,6 +8,7 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
+@Constraint(validatedBy =  AgeValidator.class)
 public @interface Age {
 
     String message() default "Age should between 18-60";
