@@ -1,5 +1,6 @@
 package spring.love.calculator.Validator;
 
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 
@@ -12,5 +13,8 @@ public @interface Age {
     int lower() default 18;
     int upper() default 60;
 
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default{};
 
 }
