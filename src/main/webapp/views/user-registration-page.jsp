@@ -52,6 +52,12 @@
 
     <br/>
 
+
+    <label>Age: </label>
+    <form:input path="age" />
+
+    <br />
+
     </div>
 
     <div align="center">
