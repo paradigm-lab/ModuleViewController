@@ -8,6 +8,9 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 public @interface Age {
 
+    String message() default "Age should between 18-60";
+    int lower() default 18;
+    int upper() default 60;
 
 
 }
