@@ -1,14 +1,13 @@
 package spring.love.calculator.Validator;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Documented
-@Retention(RUNTIME)
-@Target(FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
 public @interface Age {
+
+
+
 }
