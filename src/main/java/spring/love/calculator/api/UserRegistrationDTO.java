@@ -1,5 +1,7 @@
 package spring.love.calculator.api;
 
+import spring.love.calculator.Validator.Age;
+
 public class UserRegistrationDTO {
     private String name;
     private String userName;
@@ -8,6 +10,7 @@ public class UserRegistrationDTO {
     private String[] hobbies;
     private String gender;
 
+    @Age(lower = 30, upper = 75, message = "Age should be between 30 and 75")
     private Integer age;
 
     private CommunicationDTO communicationDTO;
