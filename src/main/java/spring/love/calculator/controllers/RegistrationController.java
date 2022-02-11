@@ -3,11 +3,16 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.CommunicationDTO;
 import spring.love.calculator.api.Phone;
 import spring.love.calculator.api.UserRegistrationDTO;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class RegistrationController {
@@ -29,7 +34,18 @@ public class RegistrationController {
     }
 
     @RequestMapping("/registration-success")
-    public String processUserReg(@ModelAttribute("userReg") UserRegistrationDTO dto) {
+    public String processUserReg(@Valid @ModelAttribute("userReg") UserRegistrationDTO dto, BindingResult result) {
+        if (result.hasErrors()) {
+            System.out.println("My page has errors");
+
+            // Adding the errors into a list and loop through them
+            List<ObjectError> allErrors = result.getAllErrors();
+            for (ObjectError error : allErrors) {
+                System.out.println(error);
+            }
+
+            return "user-registration-page";
+        }
 
         return "registration-success";
     }
