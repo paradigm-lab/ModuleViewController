@@ -5,6 +5,16 @@
 <html>
 <head>
     <title>Registration</title>
+
+    <style type="text/css">
+        .errors{
+            color: red;
+            position: fixed;
+            text-align: left;
+            margin-left: 30px;
+        }
+    </style>
+
 </head>
 <body>
     <h1 align="center"> Please register here </h1>
@@ -55,7 +65,7 @@
 
     <label>Age: </label>
     <form:input path="age" />
-
+    <form:errors path="age" cssClass="errors">
     <br />
 
     </div>
