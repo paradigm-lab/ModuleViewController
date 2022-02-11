@@ -16,10 +16,13 @@ public class AgeValidator implements ConstraintValidator<Age, Integer> {
     }
 
     @Override
-    public boolean isValid(Integer value, ConstraintValidatorContext context) {
+    public boolean isValid(Integer age, ConstraintValidatorContext context) {
 
         // Writing my logic here
+        if (age < lower || age > upper) {
+            return false;  // Fail
+        }
 
-        return false;
+        return true; // Pass
     }
 }
