@@ -19,7 +19,7 @@
 <body>
     <h1 align="center"> Please register here </h1>
 
-    <form:form action="registration-success" method="GET" modelAttribute="userReg">
+ <form:form action="registration-success" method="GET" modelAttribute="userReg">
 
     <div align="center">
     <label>User: </label>
@@ -65,7 +65,7 @@
 
     <label>Age: </label>
     <form:input path="age" />
-    <form:errors path="age" cssClass="errors">
+    <form:errors path="age" cssClass="errors" />
     <br />
 
     </div>
@@ -88,8 +88,7 @@
     <div align="center">
         <input type="submit" value="register">
     </div>
-
-    </form:form>
+</form:form>
 
 </body>
 </html>
