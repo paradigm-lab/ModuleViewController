@@ -18,6 +18,11 @@ public class AgeValidator implements ConstraintValidator<Age, Integer> {
     @Override
     public boolean isValid(Integer age, ConstraintValidatorContext context) {
 
+        // Check for if the age field is null
+        if(age == null) {
+            return false;
+        }
+
         // Writing my logic here
         if (age < lower || age > upper) {
             return false;  // Fail
