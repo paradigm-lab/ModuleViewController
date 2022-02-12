@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy =  AgeValidator.class)
 public @interface Age {
 
-    String message() default "Age should between 18-60";
+    String message() default "Age should between {lower} - {upper}";
     int lower() default 18;
     int upper() default 60;
 
