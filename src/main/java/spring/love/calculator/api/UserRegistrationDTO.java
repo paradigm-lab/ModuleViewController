@@ -10,7 +10,7 @@ public class UserRegistrationDTO {
     private String[] hobbies;
     private String gender;
 
-    @Age
+    @Age(lower = 30, upper = 70)
     private Integer age;
 
     private CommunicationDTO communicationDTO;
