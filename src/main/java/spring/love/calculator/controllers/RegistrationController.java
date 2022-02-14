@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.CommunicationDTO;
@@ -48,5 +49,10 @@ public class RegistrationController {
         }
 
         return "registration-success";
+    }
+
+    @InitBinder
+    public void initBinder() {
+        System.out.println("Inside the init binder method...");
     }
 }
