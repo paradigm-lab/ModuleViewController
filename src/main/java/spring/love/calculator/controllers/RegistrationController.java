@@ -1,6 +1,7 @@
 package spring.love.calculator.controllers;
 
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -59,6 +60,10 @@ public class RegistrationController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         System.out.println("Inside the init binder method...");
+
+        // Using the StringTrimmerEditor Class built-in in spring framework
+        StringTrimmerEditor editor = new StringTrimmerEditor(true);
+        binder.registerCustomEditor(String.class, "name", editor);
 
         // binder.setDisallowedFields("name");
 
