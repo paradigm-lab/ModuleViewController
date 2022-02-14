@@ -37,6 +37,10 @@ public class RegistrationController {
 
     @RequestMapping("/registration-success")
     public String processUserReg(@Valid @ModelAttribute("userReg") UserRegistrationDTO dto, BindingResult result) {
+
+        // Printing the user input logs
+        System.out.println("Name value entered by the user is: " +  "|" + dto.getName() + "|");
+
         if (result.hasErrors()) {
             System.out.println("My page has errors");
 
@@ -57,7 +61,7 @@ public class RegistrationController {
         System.out.println("Inside the init binder method...");
 
         // binder.setDisallowedFields("name");
-        
+
 
     }
 }
