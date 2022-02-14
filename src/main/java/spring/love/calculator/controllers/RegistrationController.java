@@ -56,6 +56,8 @@ public class RegistrationController {
     public void initBinder(WebDataBinder binder) {
         System.out.println("Inside the init binder method...");
 
-        binder.setDisallowedFields("name");
+        // binder.setDisallowedFields("name");
+        
+
     }
 }
