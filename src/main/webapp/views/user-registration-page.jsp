@@ -22,8 +22,9 @@
  <form:form action="registration-success" method="GET" modelAttribute="userReg">
 
     <div align="center">
-    <label>User: </label>
+    <label>Name: </label>
     <form:input path="name" />
+    <form:errors path="name" cssClass="errors" />
 
     <br/>
 
