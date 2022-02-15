@@ -41,4 +41,9 @@ public class CreditCard {
     public void setLastFourDigits(Integer lastFourDigits) {
         this.lastFourDigits = lastFourDigits;
     }
+
+    @Override
+    public String toString() {
+        return "" + firstFourDigits + "-" + secondFourDigits + "-" + thirdFourDigits + "-" + lastFourDigits + "";
+    }
 }
