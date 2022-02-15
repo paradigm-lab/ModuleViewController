@@ -12,6 +12,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import spring.love.calculator.converters.CreditCardConverter;
 import spring.love.calculator.formatter.PhoneNumberFormatter;
 import spring.love.calculator.formatter.billFormatter;
 
@@ -50,14 +51,13 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
         return localValidatorFactoryBean;
     }
 
-    /*
     @Override
     public void addFormatters(FormatterRegistry registry) {
         System.out.println("Inside addFormatters Method");
-        registry.addFormatter(new PhoneNumberFormatter());
-        registry.addFormatter(new billFormatter());
+        // registry.addFormatter(new PhoneNumberFormatter());
+        // registry.addFormatter(new billFormatter());
+        registry.addConverter(new CreditCardConverter());
     }
-    */
 
     @Override
     public Validator getValidator() {
