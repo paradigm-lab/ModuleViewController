@@ -5,6 +5,12 @@ import spring.love.calculator.api.CreditCard;
 import java.beans.PropertyEditorSupport;
 
 public class CreditCardEditor extends PropertyEditorSupport {
+
+    @Override
+    public String getAsText() {
+        return "Enter in xxxx-xxxx-xxxx-xxxx";
+    }
+
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
         // Split the String values with the split method and store in the string array
