@@ -50,12 +50,14 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
         return localValidatorFactoryBean;
     }
 
+    /*
     @Override
     public void addFormatters(FormatterRegistry registry) {
         System.out.println("Inside addFormatters Method");
         registry.addFormatter(new PhoneNumberFormatter());
         registry.addFormatter(new billFormatter());
     }
+    */
 
     @Override
     public Validator getValidator() {
