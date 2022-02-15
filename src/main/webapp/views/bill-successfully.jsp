@@ -11,9 +11,11 @@
     <h1>Payment Successfully</h1>
     <h2>The detail entered by you are:</h2>
 
-    Credit Card: ${userBill.card.firstFourDigits}
-    <br/>
-    Amount: ${userBill.amount.billAmount}
-
+    Bill against the credit card number: ${userBill.card}
+    <br />
+    Towards amount: ${userBill.amount}
+    <br />
+    Generated date (on): ${userBill.date}
+    <br />
 </body>
 </html>
