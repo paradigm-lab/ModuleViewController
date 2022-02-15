@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.BillDTO;
+import spring.love.calculator.propertyeditor.MyCurrencyEditor;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Currency;
 import java.util.Date;
 
 @Controller
@@ -48,5 +50,9 @@ public class BillController {
         NumberFormat numberFormat = new DecimalFormat("##,###.00");
         CustomNumberEditor customNumberEditor = new CustomNumberEditor(BigDecimal.class, numberFormat, true);
         binder.registerCustomEditor(BigDecimal.class, "amount", customNumberEditor);
+
+        // Register a custom editor for the currency
+        MyCurrencyEditor myCurrencyEditor = new MyCurrencyEditor();
+        binder.registerCustomEditor(Currency.class, "currency", myCurrencyEditor);
     }
 }
