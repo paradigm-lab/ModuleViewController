@@ -44,6 +44,6 @@ public class CreditCard {
 
     @Override
     public String toString() {
-        return "" + firstFourDigits + "-" + secondFourDigits + "-" + thirdFourDigits + "-" + lastFourDigits + "";
+        return firstFourDigits + "-" + secondFourDigits + "-" + thirdFourDigits + "-" + lastFourDigits;
     }
 }
