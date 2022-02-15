@@ -15,17 +15,27 @@
 
 <form:form action="bill-successfully" method="get" modelAttribute="userBill">
     <div align = "center">
-        <label>Card Number:</label>
-        <form:input type="text" path="card.firstFourDigits" />
+        <label>Credit Card:</label>
+        <form:input type="text" path="card" />
         <br />
         <br />
 
         <label>Amount: </label>
-        <form:input type="text" path="amount.billAmount"/>
+        <form:input type="text" path="amount" />
         <br />
         <br />
 
-        <input type="submit" value="Payment"/>
+        <label>Currency: </label>
+        <form:input type="text" path="currency" />
+        <br />
+        <br />
+
+        <label>Date: </label>
+        <form:input type="text" path="date" />
+        <br />
+        <br />
+
+        <input type="submit" value="Pay Bill"/>
     </div>
 </form:form>
 
