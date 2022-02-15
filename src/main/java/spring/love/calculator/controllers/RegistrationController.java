@@ -10,6 +10,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import spring.love.calculator.Validator.EmailValidator;
 import spring.love.calculator.Validator.UserNameValidator;
 import spring.love.calculator.api.CommunicationDTO;
 import spring.love.calculator.api.Phone;
@@ -78,5 +79,7 @@ public class RegistrationController {
 
         PhoneNumberFormatter phoneNumberFormatter = new PhoneNumberFormatter();
         binder.addCustomFormatter(phoneNumberFormatter);
+
+        binder.addValidators(new EmailValidator());
     }
 }
