@@ -1,12 +1,17 @@
 package spring.love.calculator.controllers;
 
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.BillDTO;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class BillController {
@@ -27,4 +32,10 @@ public class BillController {
         return "bill-successfully";
     }
 
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        CustomDateEditor customDateEditor = new CustomDateEditor(dateFormat, true);
+        binder.registerCustomEditor(Date.class, "date", customDateEditor);
+    }
 }
