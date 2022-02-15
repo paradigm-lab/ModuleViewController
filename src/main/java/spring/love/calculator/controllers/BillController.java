@@ -69,7 +69,7 @@ public class BillController {
         // Adding a custom formatter
         // binder.addCustomFormatter(new billFormatter());
 
-        CreditCardEditor creditCardEditor = new CreditCardEditor();
-        binder.registerCustomEditor(CreditCard.class, "card", creditCardEditor);
+        // CreditCardEditor creditCardEditor = new CreditCardEditor();
+        // binder.registerCustomEditor(CreditCard.class, "card", creditCardEditor);
     }
 }
