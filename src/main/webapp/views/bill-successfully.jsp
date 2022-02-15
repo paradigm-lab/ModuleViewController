@@ -14,6 +14,7 @@
     Bill against the credit card number: ${userBill.card}
     <br />
     Towards amount: ${userBill.amount}
+    ${userBill.currency}
     <br />
     Generated date (on): ${userBill.date}
     <br />
