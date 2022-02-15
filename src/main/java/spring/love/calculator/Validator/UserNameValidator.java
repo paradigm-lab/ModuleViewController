@@ -16,8 +16,15 @@ public class UserNameValidator implements Validator {
 
     // We need to write our customer validation logic
     @Override
-    public void validate(Object target, Errors errors) {
+    public void validate(Object object, Errors errors) {
         // To Check if the field is null
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "userName.empty", "User name can't be empty");
+
+        // The String should Contain a _
+        String userName = ((UserRegistrationDTO)object).getUserName();
+
+        if (!userName.contains("_")){
+            errors.rejectValue("userName", "userName.InvalidString", "String must contain a '_' ");
+        }
     }
 }
