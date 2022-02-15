@@ -15,7 +15,7 @@
     Bill against the credit card number: <span style="color: blue;">${userBill.card} </span>
     Towards amount:
     <span style="color:blue;">
-        ${userBill.amount} ${userBill.currency}
+        ${userBill.amount} ${userBill.currency.displayName}
     </span>
     Generated date (on): <span style="color: blue;"> ${userBill.date} </span>
     <br />
