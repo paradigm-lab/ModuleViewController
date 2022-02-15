@@ -28,6 +28,14 @@ public class BillController {
     @RequestMapping("/bill")
     public String showBillPage(@ModelAttribute("userBill") BillDTO billDTO) {
 
+        CreditCard creditCard = new CreditCard();
+        creditCard.setFirstFourDigits(1234);
+        creditCard.setSecondFourDigits(1234);
+        creditCard.setThirdFourDigits(1234);
+        creditCard.setLastFourDigits(1234);
+
+        billDTO.setCard(creditCard);
+
         return "bill-payment";
     }
 
