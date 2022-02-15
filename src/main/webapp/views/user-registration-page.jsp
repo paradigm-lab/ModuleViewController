@@ -30,6 +30,7 @@
 
     <label>User Name: </label>
     <form:input path="userName" />
+    <form:errors path="userName" cssClass="errors" />
 
     <br/>
 
