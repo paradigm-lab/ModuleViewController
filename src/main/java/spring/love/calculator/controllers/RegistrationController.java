@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.CommunicationDTO;
 import spring.love.calculator.api.Phone;
 import spring.love.calculator.api.UserRegistrationDTO;
+import spring.love.calculator.propertyeditor.NamePropertyEditor;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -64,6 +65,9 @@ public class RegistrationController {
         // Using the StringTrimmerEditor Class built-in in spring framework
         StringTrimmerEditor editor = new StringTrimmerEditor(true);
         binder.registerCustomEditor(String.class, "name", editor);
+
+        NamePropertyEditor namePropertyEditor = new NamePropertyEditor();
+        binder.registerCustomEditor(String.class, "name", namePropertyEditor);
 
         // binder.setDisallowedFields("name");
 
