@@ -14,6 +14,7 @@ import spring.love.calculator.Validator.UserNameValidator;
 import spring.love.calculator.api.CommunicationDTO;
 import spring.love.calculator.api.Phone;
 import spring.love.calculator.api.UserRegistrationDTO;
+import spring.love.calculator.formatter.PhoneNumberFormatter;
 import spring.love.calculator.propertyeditor.NamePropertyEditor;
 
 import javax.validation.Valid;
@@ -75,5 +76,7 @@ public class RegistrationController {
         UserNameValidator userNameValidator = new UserNameValidator();
         binder.addValidators(userNameValidator);
 
+        PhoneNumberFormatter phoneNumberFormatter = new PhoneNumberFormatter();
+        binder.addCustomFormatter(phoneNumberFormatter);
     }
 }
