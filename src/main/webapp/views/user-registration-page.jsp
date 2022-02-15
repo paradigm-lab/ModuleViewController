@@ -77,6 +77,7 @@
 
         <label>Email:</label>
         <form:input path="communicationDTO.email" />
+        <form:errors path="communicationDTO.email" cssClass="errors" />
 
         <br />
 
