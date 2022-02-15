@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.BillDTO;
+import spring.love.calculator.formatter.billFormatter;
 import spring.love.calculator.propertyeditor.MyCurrencyEditor;
 
 import javax.validation.Valid;
@@ -54,5 +55,8 @@ public class BillController {
         // Register a custom editor for the currency
         MyCurrencyEditor myCurrencyEditor = new MyCurrencyEditor();
         binder.registerCustomEditor(Currency.class, "currency", myCurrencyEditor);
+
+        // Adding a custom formatter
+        binder.addCustomFormatter(new billFormatter());
     }
 }
