@@ -1,6 +1,7 @@
 package spring.love.calculator.controllers;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.BillDTO;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -34,8 +38,15 @@ public class BillController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
+
+        // Editor for the date field
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         CustomDateEditor customDateEditor = new CustomDateEditor(dateFormat, true);
         binder.registerCustomEditor(Date.class, "date", customDateEditor);
+
+        // Register a custom editor for the amount field
+        NumberFormat numberFormat = new DecimalFormat("##,###.00");
+        CustomNumberEditor customNumberEditor = new CustomNumberEditor(BigDecimal.class, numberFormat, true);
+        binder.registerCustomEditor(BigDecimal.class, "amount", customNumberEditor);
     }
 }
