@@ -8,7 +8,8 @@ public class CreditCardEditor extends PropertyEditorSupport {
 
     @Override
     public String getAsText() {
-        return "Enter in xxxx-xxxx-xxxx-xxxx";
+        CreditCard creditCard = (CreditCard)getValue();
+        return "Sample : " + creditCard;
     }
 
     @Override
