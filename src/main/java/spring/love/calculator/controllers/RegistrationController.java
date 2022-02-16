@@ -42,6 +42,12 @@ public class RegistrationController {
 
     @RequestMapping("/registration-success")
     public String processUserReg(@Valid @ModelAttribute("userReg") UserRegistrationDTO dto, BindingResult result) {
+        // Keeping the log
+        System.out.println("Inside processUserReg method");
+
+        // We manually call our Email Validator
+        EmailValidator validator = new EmailValidator();
+        validator.validate(dto, result);
 
         // Printing the user input logs
         System.out.println("Name value entered by the user is: " +  "|" + dto.getName() + "|");
@@ -80,6 +86,8 @@ public class RegistrationController {
         PhoneNumberFormatter phoneNumberFormatter = new PhoneNumberFormatter();
         binder.addCustomFormatter(phoneNumberFormatter);
 
-        binder.addValidators(new EmailValidator());
+        // binder.addValidators(new EmailValidator());
+
+
     }
 }
