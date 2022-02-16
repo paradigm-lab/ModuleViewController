@@ -20,7 +20,7 @@ import spring.love.calculator.formatter.billFormatter;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "spring.love.calculator.controllers")
+@ComponentScan(basePackages = {"spring.love.calculator.controllers", "spring.love.calculator.Validator"})
 public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
     // Set up my view Resolver
