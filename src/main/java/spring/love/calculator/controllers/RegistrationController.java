@@ -1,6 +1,7 @@
 package spring.love.calculator.controllers;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,9 @@ import java.util.List;
 @Controller
 public class RegistrationController {
 
+    @Autowired
+    private EmailValidator emailValidator;
+
     @RequestMapping("/register")
     public String showRegistrationPage(@ModelAttribute("userReg") UserRegistrationDTO dto) {
 
@@ -46,8 +50,7 @@ public class RegistrationController {
         System.out.println("Inside processUserReg method");
 
         // We manually call our Email Validator
-        EmailValidator validator = new EmailValidator();
-        validator.validate(dto, result);
+        emailValidator.validate(dto, result);
 
         // Printing the user input logs
         System.out.println("Name value entered by the user is: " +  "|" + dto.getName() + "|");

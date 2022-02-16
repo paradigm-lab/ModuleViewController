@@ -1,10 +1,12 @@
 package spring.love.calculator.Validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 import spring.love.calculator.api.UserRegistrationDTO;
 
+@Component
 public class EmailValidator implements Validator {
 
     @Override
