@@ -17,7 +17,7 @@
 
     <label> Enter your Email </label>
     <form:input path="userEmail" />
-    <imput type="submit" value="send" />
+    <input type="submit" value="send" />
 
 </form:form>
 
