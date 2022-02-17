@@ -14,14 +14,16 @@ public class EmailController {
     public String sendEmail(@PathVariable("userName") String userName, EmailDTO emailDTO, Model model) {
 
         model.addAttribute("emailDTO", new EmailDTO());
+        model.addAttribute("userName", userName.toUpperCase());
 
-        model.addAttribute("userName", "userName.toUpperCase()");
+        // Adding the log To check if the controller comes to my URL
+        System.out.println("In my Controller method");
 
         return "send-email-page";
     }
 
     @RequestMapping("/process-email")
-    public String processEmail(@ModelAttribute("") EmailDTO emailDTO) {
+    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO) {
 
         return "process-email-page";
     }
