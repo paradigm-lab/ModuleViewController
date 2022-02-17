@@ -9,6 +9,6 @@
 </head>
 <body>
     <h2> Hi </h2>
-    <label>Email Successfully sent to {emailDTO}</label>
+    <label>Email Successfully sent to ${emailDTO.userEmail}</label>
 </body>
 </html>
