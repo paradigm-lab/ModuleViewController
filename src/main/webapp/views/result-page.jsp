@@ -9,12 +9,15 @@
     <h1 align="center">Love calculator</h1>
     <hr/>
 
-    <p>
-        User Name is: ${userInfo.userName}
-    </p>
 
-    <p>
-        Crush Name is: ${userInfo.crushName}
-    </p>
+<h2> The Love Calculator Predicts: </h2>
+<br/>
+        ${userInfo.userName} and ${userInfo.crushName} are
+        <br />
+        FRIEND
+
+        <br />
+
+        <a href = "#"> Send Result to Your Email </a>
 </body>
 </html>
