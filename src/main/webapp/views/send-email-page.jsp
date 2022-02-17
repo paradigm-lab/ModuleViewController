@@ -10,7 +10,16 @@
 
 <body>
 
+<h1> Hi </h1>
+<h2> Send Result To Your Email </h2>
 
+<form:form action="process-email" method="GET" modelAttribute="emailDTO">
+
+    <label> Enter your Email </label>
+    <form:input path="userEmail" />
+    <imput type="submit" value="send" />
+
+</form:form>
 
 </body>
 </html>
