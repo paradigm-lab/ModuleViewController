@@ -51,6 +51,11 @@ public class LCAppController {
             return "home-page";
         }
 
+
+        // Write a service which will calculate the love % between the user and the crush name
+
+
+
         return "result-page";
     }
 
