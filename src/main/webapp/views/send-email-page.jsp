@@ -10,7 +10,7 @@
 
 <body>
 
-<h1> Hi ${userName}</h1>
+<h1> Hi </h1>
 <h2> Send Result To Your Email </h2>
 
 <form:form action="process-email" method="GET" modelAttribute="emailDTO">

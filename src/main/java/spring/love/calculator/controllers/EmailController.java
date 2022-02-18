@@ -12,14 +12,15 @@ import java.util.Map;
 @Controller
 public class EmailController {
 
-    @RequestMapping("/sendEmail/{userName}")
-    public String sendEmail(@PathVariable("userName") String userName, Model model) {
+    @RequestMapping("/sendEmail")
+    public String sendEmail(Model model) {
 
+        // @PathVariable("userName") String userName
         // String userName = pathVar.get("userName");
         // String hobby = pathVar.get("hobby");
 
         model.addAttribute("emailDTO", new EmailDTO());
-        model.addAttribute("userName", userName.toUpperCase());
+        // model.addAttribute("userName", userName.toUpperCase());
 
         // Adding the log To check if the controller comes to my URL
         System.out.println("In my Controller method");

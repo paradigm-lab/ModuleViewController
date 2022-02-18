@@ -18,6 +18,6 @@
 
         <br />
 
-        <a href = "/sendEmail/${userInfo.userName}"> Send Result to Your Email </a>
+        <a href = "/sendEmail/"> Send Result to Your Email </a>
 </body>
 </html>
