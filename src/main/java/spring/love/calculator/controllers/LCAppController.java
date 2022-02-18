@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import spring.love.calculator.api.UserInfoDTO;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -38,7 +40,7 @@ public class LCAppController {
 
 
     @RequestMapping("/process-homepage")
-    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
+    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result, HttpServletResponse response) {
 
         System.out.println(userInfoDTO.isTermAndCondition());
 
@@ -51,7 +53,12 @@ public class LCAppController {
             return "home-page";
         }
 
+        // Create a cookie for the user name
+        Cookie cookie = new Cookie("LCApp.userName",userInfoDTO.getUserName());
+        cookie.setMaxAge(60*60*24);
 
+        // Add the Cookie to the response object
+        response.addCookie(cookie);
         // Write a service which will calculate the love % between the user and the crush name
 
 
