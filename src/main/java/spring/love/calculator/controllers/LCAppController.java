@@ -22,6 +22,7 @@ public class LCAppController {
     @RequestMapping("/")
     public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto, HttpServletRequest request) {
 
+        /*
         Cookie[] cookies = request.getCookies();
 
         for(Cookie temp : cookies) {
@@ -30,6 +31,8 @@ public class LCAppController {
                 userInfodto.setUserName(myUserName);
             }
         }
+
+         */
 
         return "home-page";
     }
