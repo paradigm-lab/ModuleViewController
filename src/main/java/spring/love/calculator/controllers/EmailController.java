@@ -2,6 +2,7 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,10 @@ import java.util.Map;
 public class EmailController {
 
     @RequestMapping("/sendEmail")
-    public String sendEmail(Model model) {
+    public String sendEmail(@CookieValue("LCApp.userName") String userName, Model model) {
+
+        // Getting the cookie using the key value and store the value in the userName
+        model.addAttribute("userName", userName);
 
         // @PathVariable("userName") String userName
         // String userName = pathVar.get("userName");
