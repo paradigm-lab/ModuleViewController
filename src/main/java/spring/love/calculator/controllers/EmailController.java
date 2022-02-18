@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.EmailDTO;
 
+import java.util.Map;
+
 @Controller
 public class EmailController {
 
     @RequestMapping("/sendEmail/{userName}")
-    public String sendEmail(@PathVariable("userName") String userName, EmailDTO emailDTO, Model model) {
+    public String sendEmail(@PathVariable("userName") String userName, Model model) {
+
+        // String userName = pathVar.get("userName");
+        // String hobby = pathVar.get("hobby");
 
         model.addAttribute("emailDTO", new EmailDTO());
         model.addAttribute("userName", userName.toUpperCase());
