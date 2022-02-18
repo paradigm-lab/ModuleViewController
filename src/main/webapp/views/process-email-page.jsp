@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <h2> Hi </h2>
+    <h2> Hi ${userName}</h2>
     <label>Email Successfully sent to ${emailDTO.userEmail}</label>
 </body>
 </html>

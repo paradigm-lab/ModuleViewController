@@ -33,7 +33,10 @@ public class EmailController {
     }
 
     @RequestMapping("/process-email")
-    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO) {
+    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO, @CookieValue("LCApp.userName") String userName, Model model) {
+
+        model.addAttribute("userName", userName);
+
 
         return "process-email-page";
     }
