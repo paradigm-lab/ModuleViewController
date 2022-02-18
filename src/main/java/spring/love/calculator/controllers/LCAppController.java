@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import spring.love.calculator.api.UserInfoDTO;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
@@ -19,7 +20,16 @@ public class LCAppController {
 
 
     @RequestMapping("/")
-    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto) {
+    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto, HttpServletRequest request) {
+
+        Cookie[] cookies = request.getCookies();
+
+        for(Cookie temp : cookies) {
+            if ("LCApp.userName".equals(temp.getName())) {
+                String myUserName = temp.getValue();
+                userInfodto.setUserName(myUserName);
+            }
+        }
 
         return "home-page";
     }
@@ -53,7 +63,8 @@ public class LCAppController {
             return "home-page";
         }
 
-        // Create a cookie for the user name
+        // Create a cookie for the username
+        // The cookie Constructor takes a key and the value which is a Map
         Cookie cookie = new Cookie("LCApp.userName",userInfoDTO.getUserName());
         cookie.setMaxAge(60*60*24);
 
