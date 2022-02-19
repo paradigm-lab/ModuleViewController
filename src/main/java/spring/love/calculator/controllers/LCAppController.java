@@ -71,6 +71,9 @@ public class LCAppController {
         }
 
         // The session object is now globally available
+        // By Default, The Session objects are stored inside the server in memory
+        // All the session object will be removed from the memory once you stop the server
+
         HttpSession session = request.getSession();
         session.setAttribute("userName", userInfoDTO.getUserName());
 
