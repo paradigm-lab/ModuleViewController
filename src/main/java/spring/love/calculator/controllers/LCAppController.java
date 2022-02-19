@@ -74,8 +74,13 @@ public class LCAppController {
         // By Default, The Session objects are stored inside the server in memory
         // All the session object will be removed from the memory once you stop the server
 
+        
         HttpSession session = request.getSession();
         session.setAttribute("userName", userInfoDTO.getUserName());
+
+        // Configuring the session timeout
+        // if the users remains inactive for 120 minutes remove the userName object from the session
+        session.setMaxInactiveInterval(120);
 
 
         /*
