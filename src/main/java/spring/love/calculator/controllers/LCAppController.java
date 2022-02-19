@@ -20,7 +20,11 @@ public class LCAppController {
 
 
     @RequestMapping("/")
-    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto, HttpServletRequest request) {
+    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto) {
+
+        /*
+
+        HttpServletRequest
 
         Cookie[] cookies = request.getCookies();
 
@@ -30,6 +34,7 @@ public class LCAppController {
                 userInfodto.setUserName(myUserName);
             }
         }
+        */
 
 
         return "home-page";
@@ -51,7 +56,7 @@ public class LCAppController {
 
 
     @RequestMapping("/process-homepage")
-    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result, HttpServletResponse response) {
+    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
 
         System.out.println(userInfoDTO.isTermAndCondition());
 
@@ -64,6 +69,10 @@ public class LCAppController {
             return "home-page";
         }
 
+        /*
+
+        // HttpServletResponse
+
         // Create a cookie for the username
         // The cookie Constructor takes a key and the value which is a Map
         Cookie cookie = new Cookie("LCApp.userName",userInfoDTO.getUserName());
@@ -71,6 +80,9 @@ public class LCAppController {
 
         // Add the Cookie to the response object
         response.addCookie(cookie);
+       */
+
+
         // Write a service which will calculate the love % between the user and the crush name
 
 

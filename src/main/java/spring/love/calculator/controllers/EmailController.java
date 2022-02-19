@@ -14,10 +14,13 @@ import java.util.Map;
 public class EmailController {
 
     @RequestMapping("/sendEmail")
-    public String sendEmail(@CookieValue("LCApp.userName") String userName, Model model) {
+    public String sendEmail(Model model) {
 
+        /*
+        @CookieValue("LCApp.userName") String userName, Model model) {
         // Getting the cookie using the key value and store the value in the userName
         model.addAttribute("userName", userName);
+         */
 
         // @PathVariable("userName") String userName
         // String userName = pathVar.get("userName");
@@ -33,9 +36,12 @@ public class EmailController {
     }
 
     @RequestMapping("/process-email")
-    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO, @CookieValue("LCApp.userName") String userName, Model model) {
+    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO){
 
+        /*
+        @CookieValue("LCApp.userName") String userName, Model model) {
         model.addAttribute("userName", userName);
+        */
 
 
         return "process-email-page";
