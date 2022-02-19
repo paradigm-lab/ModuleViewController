@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.EmailDTO;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
@@ -36,7 +37,12 @@ public class EmailController {
     }
 
     @RequestMapping("/process-email")
-    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO){
+    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO, HttpSession session, Model model){
+
+        String userName =  (String) session.getAttribute("userName");
+        String newUserName = "Mr " + userName;
+
+        model.addAttribute("userName", newUserName);
 
         /*
         @CookieValue("LCApp.userName") String userName, Model model) {
