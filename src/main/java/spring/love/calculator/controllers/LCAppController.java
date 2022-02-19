@@ -12,6 +12,7 @@ import spring.love.calculator.api.UserInfoDTO;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -56,7 +57,7 @@ public class LCAppController {
 
 
     @RequestMapping("/process-homepage")
-    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
+    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result, HttpServletRequest request) {
 
         System.out.println(userInfoDTO.isTermAndCondition());
 
@@ -68,6 +69,11 @@ public class LCAppController {
 
             return "home-page";
         }
+
+
+        HttpSession session = request.getSession();
+        session.setAttribute("userName", userInfoDTO.getUserName());
+
 
         /*
 
