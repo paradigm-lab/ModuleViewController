@@ -70,7 +70,7 @@ public class LCAppController {
             return "home-page";
         }
 
-
+        // The session object is now globally available
         HttpSession session = request.getSession();
         session.setAttribute("userName", userInfoDTO.getUserName());
 
