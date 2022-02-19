@@ -7,6 +7,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import spring.love.calculator.api.UserInfoDTO;
 
 import javax.servlet.http.Cookie;
@@ -17,11 +18,20 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+// When passing the SessionAttributes we need to make sure that it's the model object name
+// Model attribute to session takes an array, so we can pass more than one Model in our session
+// @SessionAttributes("{userInfo}, {EmailDTO}")
+@SessionAttributes("userInfo")
 public class LCAppController {
 
 
     @RequestMapping("/")
-    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfodto) {
+    public String showHomePage(Model model) {
+
+        // When we use the @ModelAttribute annotation then we need to pass the model attribute by our selves
+
+        model.addAttribute("userInfo", new UserInfoDTO());
+
 
         /*
 
