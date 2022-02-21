@@ -16,4 +16,12 @@ public class FirstController {
         return "index";
     }
 
+    @RequestMapping("/second")
+    public String handlingMethod2(Model model1) {
+
+         String firstName = (String) model1.getAttribute("firstName");
+         System.out.println(firstName);
+
+        return "index";
+    }
 }
