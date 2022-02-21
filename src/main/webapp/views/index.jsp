@@ -17,6 +17,12 @@
     Last Name: ${lastName}
     <br />
 
+    FIRST NAME VALUE FETCHING FROM THE REQUEST: ${requestScope.firstName}
+    <br />
+
+    FIRST NAME VALUE FETCHING FROM THE SESSION: ${sessionScope.firstName}
+    <br />
+
     <a href="/second"> Next Page </a>
 </body>
 </html>
