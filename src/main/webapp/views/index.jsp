@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1 align="center"> Session Attribute example </h1>
+    <h1 align="center"> Session Attributes examples </h1>
     <hr />
 </body>
 </html>
