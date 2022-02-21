@@ -13,7 +13,10 @@
     <hr />
 
     First Name: ${firstName}
+    <br />
     Last Name: ${lastName}
+    <br />
 
+    <a href="/second"> Next Page </a>
 </body>
 </html>
