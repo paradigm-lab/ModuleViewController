@@ -11,5 +11,9 @@
 <body>
     <h1 align="center"> Session Attributes examples </h1>
     <hr />
+
+    First Name: ${firstName}
+    Last Name: ${lastName}
+
 </body>
 </html>
