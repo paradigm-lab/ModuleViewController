@@ -15,6 +15,8 @@ public class FirstController {
         model.addAttribute("firstName", "Collins");
         model.addAttribute("lastName", "Boniface");
 
+        model.addAttribute("next", "/second");
+
         return "index";
     }
 
@@ -30,6 +32,8 @@ public class FirstController {
 
         model1.addAttribute("firstName", firstName);
         model1.addAttribute("lastName", lastName);
+
+        model1.addAttribute("next", "/third");
 
         return "index";
     }
