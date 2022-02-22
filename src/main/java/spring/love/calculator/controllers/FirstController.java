@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 @SessionAttributes({"firstName", "lastName"})
@@ -35,15 +36,23 @@ public class FirstController {
 
         model1.addAttribute("next", "/third");
 
+        // Removing the session attributes from the session scope
+        // All the Session Attributes will be removed from the session scope
+        // status.setComplete();
+
         return "index";
     }
 
 
     @RequestMapping("/third")
-    public String handlingMethod3(Model model2) {
+    public String handlingMethod3(Model model2, SessionStatus status) {
 
         String lastName = (String) model2.getAttribute("lastName");
+        System.out.println("Third request; Fetching from model: " + lastName);
+
         model2.addAttribute("lastName");
+
+        status.setComplete();
 
         return "index";
     }
