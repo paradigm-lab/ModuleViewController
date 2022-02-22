@@ -23,6 +23,6 @@
     FIRST NAME VALUE FETCHING FROM THE SESSION: ${sessionScope.firstName}
     <br />
 
-    <a href="/second"> Next Page </a>
+    <a href="${next}"> Next Page is ${next}</a>
 </body>
 </html>
