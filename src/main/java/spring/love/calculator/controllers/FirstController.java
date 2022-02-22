@@ -52,6 +52,8 @@ public class FirstController {
 
         model2.addAttribute("lastName");
 
+        model2.addAttribute("next", "/normalMethod");
+
         // status.setComplete();
 
         return "index";
