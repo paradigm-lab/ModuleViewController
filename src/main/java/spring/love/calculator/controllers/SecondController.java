@@ -11,14 +11,14 @@ import javax.servlet.http.HttpSession;
 public class SecondController {
 
     @RequestMapping("/normalMethod")
-    public String handlingMethod3(@SessionAttribute("firstName") String firstName, Model model, HttpSession session) {
+    public String handlingMethod3(Model model, HttpSession session) {
 
+        // @SessionAttribute("firstName") String firstName
         // String firstName = (String) model.getAttribute("firstName");
+        // String newFirstName = "Mr " + firstName;
+        // model.addAttribute("firstName", newFirstName);
+        // System.out.println("Inside the new Controller method, Printing firstName: " + firstName);
 
-        String newFirstName = "Mr " + firstName;
-        model.addAttribute("firstName", newFirstName);
-
-        System.out.println("Inside the new Controller method, Printing firstName: " + firstName);
 
         // Retrieving the session Attribute from http session
         String address = (String) session.getAttribute("address");
