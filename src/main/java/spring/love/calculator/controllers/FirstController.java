@@ -63,7 +63,7 @@ public class FirstController {
         status.setComplete();
 
         String address = (String) session.getAttribute("address");
-        String newAddress = address += "Home Sweet Home";
+        String newAddress = address += " Home Sweet Home";
 
         model2.addAttribute("address", newAddress);
 

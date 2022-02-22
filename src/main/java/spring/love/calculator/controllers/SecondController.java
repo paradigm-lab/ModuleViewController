@@ -25,6 +25,8 @@ public class SecondController {
         String newAddress = address + " South Africa";
         model.addAttribute("address", newAddress);
 
+        session.invalidate();
+
         return "index";
     }
 
