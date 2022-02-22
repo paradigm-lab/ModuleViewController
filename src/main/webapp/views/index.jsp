@@ -14,7 +14,11 @@
 
     First Name: ${firstName}
     <br />
+
     Last Name: ${lastName}
+    <br />
+
+    Address: ${address}
     <br />
 
     FIRST NAME VALUE FETCHING FROM THE REQUEST: ${requestScope.firstName}
