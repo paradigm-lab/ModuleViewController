@@ -60,7 +60,7 @@ public class FirstController {
 
         model2.addAttribute("next", "/normalMethod");
 
-        // status.setComplete();
+        status.setComplete();
 
         String address = (String) session.getAttribute("address");
         String newAddress = address += "Home Sweet Home";
