@@ -51,7 +51,7 @@ public class FirstController {
 
 
     @RequestMapping("/third")
-    public String handlingMethod3(Model model2, SessionStatus status) {
+    public String handlingMethod3(Model model2, SessionStatus status, HttpSession session) {
 
         String lastName = (String) model2.getAttribute("lastName");
         System.out.println("Third request; Fetching from model: " + lastName);
@@ -61,6 +61,11 @@ public class FirstController {
         model2.addAttribute("next", "/normalMethod");
 
         status.setComplete();
+
+        String address = (String) session.getAttribute("address");
+        String newAddress = address += "Home Sweet Home";
+
+        model2.addAttribute("address", newAddress);
 
         return "index";
     }
