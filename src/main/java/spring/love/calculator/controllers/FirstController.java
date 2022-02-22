@@ -33,4 +33,14 @@ public class FirstController {
 
         return "index";
     }
+
+
+    @RequestMapping("/third")
+    public String handlingMethod3(Model model2) {
+
+        String lastName = (String) model2.getAttribute("lastName");
+        model2.addAttribute("lastName");
+
+        return "index";
+    }
 }
