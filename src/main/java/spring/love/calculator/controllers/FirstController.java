@@ -6,17 +6,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 @SessionAttributes({"firstName", "lastName"})
 public class FirstController {
 
     @RequestMapping("/first")
-    public String handlingMethod1(Model model) {
+    public String handlingMethod1(Model model, HttpServletRequest request) {
 
         model.addAttribute("firstName", "Collins");
         model.addAttribute("lastName", "Boniface");
 
         model.addAttribute("next", "/second");
+
+        HttpSession session = request.getSession();
+        session.setAttribute("address", "Sakina");
 
         return "index";
     }
