@@ -2,11 +2,11 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import spring.love.calculator.api.EmailDTO;
+import spring.love.calculator.api.UserInfoDTO;
+import spring.love.calculator.service.LCAppEmailService;
+import spring.love.calculator.service.LCAppEmailServiceImpl;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class EmailController {
     }
 
     @RequestMapping("/process-email")
-    public String processEmail(@ModelAttribute("emailDTO") EmailDTO emailDTO) {
+    public String processEmail(@SessionAttribute("userInfo") UserInfoDTO userInfoDTO, @ModelAttribute("emailDTO") EmailDTO emailDTO) {
 
         /*
         HttpSession session, Model model
@@ -53,6 +53,7 @@ public class EmailController {
         model.addAttribute("userName", userName);
         */
 
+        new LCAppEmailServiceImpl().sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
 
         return "process-email-page";
     }
