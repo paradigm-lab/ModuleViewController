@@ -2,6 +2,6 @@ package spring.love.calculator.service;
 
 public interface LCAppEmailService {
 
-    void sendEmail(String userEmail, String result);
+    void sendEmail(String userName, String userEmail, String result);
 
 }
