@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -16,6 +18,8 @@ import spring.love.calculator.converters.CreditCardConverter;
 import spring.love.calculator.converters.CreditConverterObjectToString;
 import spring.love.calculator.formatter.PhoneNumberFormatter;
 import spring.love.calculator.formatter.billFormatter;
+
+import java.util.Properties;
 
 
 @EnableWebMvc
@@ -51,6 +55,26 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
         return localValidatorFactoryBean;
     }
+
+
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+        javaMailSender.setHost("smtp.gmail.com");
+        javaMailSender.setUsername("bonifacecollins1000@gmail.com");
+        javaMailSender.setPassword("ccolaria1000");
+        javaMailSender.setPort(587);
+
+        Properties mailProperties = new Properties();
+        mailProperties.put("mail.smtp.starttls.enable", true);
+        mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+        javaMailSender.setJavaMailProperties(mailProperties);
+
+        return javaMailSender;
+    }
+
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
