@@ -1,5 +1,6 @@
 package spring.love.calculator.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ import java.util.Map;
 
 @Controller
 public class EmailController {
+
+    @Autowired
+    private LCAppEmailServiceImpl lcAppEmailService;
 
     @RequestMapping("/sendEmail")
     public String sendEmail(Model model) {
@@ -53,7 +57,7 @@ public class EmailController {
         model.addAttribute("userName", userName);
         */
 
-        new LCAppEmailServiceImpl().sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
+        lcAppEmailService.sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
 
         return "process-email-page";
     }
