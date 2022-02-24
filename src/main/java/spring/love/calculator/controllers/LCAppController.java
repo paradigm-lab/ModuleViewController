@@ -1,5 +1,6 @@
 package spring.love.calculator.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import spring.love.calculator.api.UserInfoDTO;
+import spring.love.calculator.service.LCAppService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +25,9 @@ import java.util.List;
 // @SessionAttributes("{userInfo}, {EmailDTO}")
 @SessionAttributes("userInfo")
 public class LCAppController {
+
+    @Autowired
+    private LCAppService lcAppService;
 
 
     @RequestMapping("/")
@@ -67,7 +72,7 @@ public class LCAppController {
 
 
     @RequestMapping("/process-homepage")
-    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result) {
+    public String showResultPage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult result, Model model) {
 
         System.out.println(userInfoDTO.isTermAndCondition());
 
@@ -79,6 +84,11 @@ public class LCAppController {
 
             return "home-page";
         }
+
+
+        String appResult = lcAppService.calculateLove(userInfoDTO.getUserName(), userInfoDTO.getCrushName());
+        model.addAttribute("result", appResult);
+
 
         // The session object is now globally available
         // By Default, The Session objects are stored inside the server in memory
