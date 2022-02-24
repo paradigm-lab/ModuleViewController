@@ -64,32 +64,6 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     }
 
 
-    @Bean
-    public JavaMailSender getJavaMailSender() {
-
-        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-
-        javaMailSender.setHost(environment.getProperty("mail.host"));
-        javaMailSender.setUsername(environment.getProperty("mail.username"));
-        javaMailSender.setPassword(environment.getProperty("mail.password"));
-        javaMailSender.setPort(getIntProperty("mail.port"));
-
-        Properties mailProperties = new Properties();
-        mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        mailProperties.put("mail.smtp.host", "smtp.gmail.com");
-        mailProperties.put("mail.smtp.port", "465");
-        mailProperties.put("mail.smtp.auth", "true");
-        mailProperties.put("mail.smtp.starttls.enable", "true");
-        mailProperties.put("mail.smtp.starttls.required", "true");
-        mailProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
-        mailProperties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-
-        javaMailSender.setJavaMailProperties(mailProperties);
-
-        return javaMailSender;
-    }
-
-
     @Override
     public void addFormatters(FormatterRegistry registry) {
         System.out.println("Inside addFormatters Method");
@@ -103,6 +77,37 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     public Validator getValidator() {
 
         return validator();
+    }
+
+
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+
+        javaMailSender.setHost(environment.getProperty("mail.host"));
+        javaMailSender.setUsername(environment.getProperty("mail.username"));
+        javaMailSender.setPassword(environment.getProperty("mail.password"));
+        javaMailSender.setPort(getIntProperty("mail.port"));
+
+        // Properties mailProperties = getMailProperties();
+
+        javaMailSender.setJavaMailProperties(getMailProperties());
+
+        return javaMailSender;
+    }
+
+    private Properties getMailProperties() {
+        Properties mailProperties = new Properties();
+        mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        mailProperties.put("mail.smtp.host", "smtp.gmail.com");
+        mailProperties.put("mail.smtp.port", "465");
+        mailProperties.put("mail.smtp.auth", "true");
+        mailProperties.put("mail.smtp.starttls.enable", "true");
+        mailProperties.put("mail.smtp.starttls.required", "true");
+        mailProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        mailProperties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        return mailProperties;
     }
 
 
