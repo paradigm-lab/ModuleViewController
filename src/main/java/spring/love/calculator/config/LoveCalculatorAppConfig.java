@@ -69,12 +69,10 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
 
-        System.out.println(environment.getProperty("mail.host"));
-
-        javaMailSender.setHost("smtp.gmail.com");
-        javaMailSender.setUsername("bonifacecollins1000@gmail.com");
-        javaMailSender.setPassword("ccolaria1000");
-        javaMailSender.setPort(587);
+        javaMailSender.setHost(environment.getProperty("mail.host"));
+        javaMailSender.setUsername(environment.getProperty("mail.username"));
+        javaMailSender.setPassword(environment.getProperty("mail.password"));
+        javaMailSender.setPort(Integer.parseInt(environment.getProperty("mail.port")));
 
         Properties mailProperties = new Properties();
         mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
