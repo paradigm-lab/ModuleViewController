@@ -11,12 +11,16 @@ import spring.love.calculator.service.LCAppEmailServiceImpl;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import java.util.logging.Logger;
 
 @Controller
 public class EmailController {
 
     @Autowired
     private LCAppEmailServiceImpl lcAppEmailService;
+
+    // Creating a logger instance
+    Logger logger = Logger.getLogger(LCAppEmailServiceImpl.class.getName());
 
     @RequestMapping("/sendEmail")
     public String sendEmail(Model model) {
@@ -56,8 +60,11 @@ public class EmailController {
         @CookieValue("LCApp.userName") String userName, Model model) {
         model.addAttribute("userName", userName);
         */
-
-        lcAppEmailService.sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
+        try {
+            lcAppEmailService.sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
+        } catch (Exception e) {
+            logger.info("logging the Email Service Exception " + e);
+        }
 
         return "process-email-page";
     }
