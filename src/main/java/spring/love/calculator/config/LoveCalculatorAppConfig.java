@@ -67,8 +67,14 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
         javaMailSender.setPort(587);
 
         Properties mailProperties = new Properties();
-        mailProperties.put("mail.smtp.starttls.enable", true);
         mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        mailProperties.put("mail.smtp.host", "smtp.gmail.com");
+        mailProperties.put("mail.smtp.port", "465");
+        mailProperties.put("mail.smtp.auth", "true");
+        mailProperties.put("mail.smtp.starttls.enable", "true");
+        mailProperties.put("mail.smtp.starttls.required", "true");
+        mailProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        mailProperties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
         javaMailSender.setJavaMailProperties(mailProperties);
 
