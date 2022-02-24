@@ -21,7 +21,26 @@ public class LCAppServiceImpl implements LCAppService{
 
     @Override
     public String whatsBetweenUs(char calculationResult) {
-        
-        return null;
+
+        String result = null;
+
+        if(calculationResult == 'F') {
+            result = LoveCalculatorConstants.F_CHAR_MEANING;
+        }
+        else if (calculationResult == 'L') {
+            result = LoveCalculatorConstants.L_CHAR_MEANING;
+        }
+        else if (calculationResult == 'A') {
+            result = LoveCalculatorConstants.A_CHAR_MEANING;
+        }
+        else if (calculationResult == 'M') {
+            result = LoveCalculatorConstants.M_CHAR_MEANING;
+        }
+        else if (calculationResult == 'E') {
+            result = LoveCalculatorConstants.E_CHAR_MEANING;
+        }
+
+        return result;
     }
+
 }
