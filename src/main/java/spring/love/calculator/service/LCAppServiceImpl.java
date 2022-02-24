@@ -8,7 +8,7 @@ public class LCAppServiceImpl implements LCAppService{
     public final String LC_APP_FORMULA = "FLAME";
 
     @Override
-    public void calculateLove(String userName, String crushName) {
+    public String calculateLove(String userName, String crushName) {
         int userAndCrushNameCount = (userName+crushName).toCharArray().length;
         int formulacount = LC_APP_FORMULA.toCharArray().length;
 
@@ -17,6 +17,8 @@ public class LCAppServiceImpl implements LCAppService{
         char resultChar = LC_APP_FORMULA.charAt(rem);
 
         String result = whatsBetweenUs(resultChar);
+
+        return result;
     }
 
     @Override
