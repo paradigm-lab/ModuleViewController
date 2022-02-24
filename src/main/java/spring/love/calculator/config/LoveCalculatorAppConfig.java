@@ -72,7 +72,7 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
         javaMailSender.setHost(environment.getProperty("mail.host"));
         javaMailSender.setUsername(environment.getProperty("mail.username"));
         javaMailSender.setPassword(environment.getProperty("mail.password"));
-        javaMailSender.setPort(Integer.parseInt(environment.getProperty("mail.port")));
+        javaMailSender.setPort(getIntProperty("mail.port"));
 
         Properties mailProperties = new Properties();
         mailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
@@ -104,4 +104,15 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
         return validator();
     }
+
+
+    // Helper method to convert a string into an integer
+    int getIntProperty(String key) {
+
+        String property = environment.getProperty(key);
+
+        return Integer.parseInt(property);
+    }
+
+
 }
