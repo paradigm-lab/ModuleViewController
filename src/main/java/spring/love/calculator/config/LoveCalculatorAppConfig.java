@@ -1,11 +1,14 @@
 package spring.love.calculator.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -25,7 +28,11 @@ import java.util.Properties;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"spring.love.calculator"})
+@PropertySource("classpath:email.properties")
 public class LoveCalculatorAppConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private Environment environment;
 
     // Set up my view Resolver
     @Bean
@@ -61,6 +68,9 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     public JavaMailSender getJavaMailSender() {
 
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+
+        System.out.println(environment.getProperty("mail.host"));
+
         javaMailSender.setHost("smtp.gmail.com");
         javaMailSender.setUsername("bonifacecollins1000@gmail.com");
         javaMailSender.setPassword("ccolaria1000");
