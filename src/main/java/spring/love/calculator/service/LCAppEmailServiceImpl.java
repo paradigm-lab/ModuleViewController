@@ -16,7 +16,7 @@ public class LCAppEmailServiceImpl implements LCAppEmailService{
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setTo(userEmail);
         simpleMailMessage.setSubject("Love Calculator Application Result");
-        simpleMailMessage.setText("Hi" + userName + " The result predicated by the LCApp is " + result);
+        simpleMailMessage.setText("Hi " + userName + " The result predicated by the Love Calculator App is: " + result);
 
         javaMailSender.send(simpleMailMessage);
     }
