@@ -3,10 +3,7 @@ package spring.love.calculator.config;
 import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
@@ -30,7 +27,7 @@ import java.util.logging.Logger;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"spring.love.calculator"})
-@PropertySource("classpath:email.properties")
+@PropertySources({@PropertySource("classpath:email.properties"), @PropertySource("classpath:messages.properties")})
 public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
     @Autowired
