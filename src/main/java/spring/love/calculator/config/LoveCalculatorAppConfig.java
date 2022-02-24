@@ -1,5 +1,6 @@
 package spring.love.calculator.config;
 
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,7 @@ import spring.love.calculator.formatter.PhoneNumberFormatter;
 import spring.love.calculator.formatter.billFormatter;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 
 @EnableWebMvc
@@ -33,6 +35,9 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
 
     @Autowired
     private Environment environment;
+
+    // Creating the logger instance for the class
+    Logger logger = Logger.getLogger(LoveCalculatorAppConfig.class.getName());
 
     // Set up my view Resolver
     @Bean
@@ -84,6 +89,8 @@ public class LoveCalculatorAppConfig implements WebMvcConfigurer {
     public JavaMailSender getJavaMailSender() {
 
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+
+        logger.info(">>>>>>>>>>>>>> Fetching the host value " + environment.getProperty("mail.host"));
 
         javaMailSender.setHost(environment.getProperty("mail.host"));
         javaMailSender.setUsername(environment.getProperty("mail.username"));
