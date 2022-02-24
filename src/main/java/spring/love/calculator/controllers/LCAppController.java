@@ -87,8 +87,9 @@ public class LCAppController {
 
 
         String appResult = lcAppService.calculateLove(userInfoDTO.getUserName(), userInfoDTO.getCrushName());
-        model.addAttribute("result", appResult);
+        userInfoDTO.setResult(appResult);
 
+        // model.addAttribute("result", appResult);
 
         // The session object is now globally available
         // By Default, The Session objects are stored inside the server in memory
