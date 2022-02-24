@@ -19,9 +19,11 @@ public class UserInfoDTO {
     @AssertTrue(message = "Agree to use our app")
     private boolean termAndCondition;
 
+    private String result;
+
     /*
-            The getter and setter method
-         */
+                The getter and setter method
+             */
     public String getUserName() {
         return userName;
     }
@@ -44,6 +46,14 @@ public class UserInfoDTO {
 
     public void setTermAndCondition(boolean termAndCondition) {
         this.termAndCondition = termAndCondition;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
