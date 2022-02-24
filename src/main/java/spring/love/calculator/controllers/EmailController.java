@@ -61,7 +61,7 @@ public class EmailController {
         model.addAttribute("userName", userName);
         */
         try {
-            lcAppEmailService.sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), "Friend");
+            lcAppEmailService.sendEmail(userInfoDTO.getUserName(), emailDTO.getUserEmail(), userInfoDTO.getResult());
         } catch (Exception e) {
             logger.info("logging the Email Service Exception " + e);
         }
