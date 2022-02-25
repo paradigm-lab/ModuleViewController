@@ -6,6 +6,17 @@
 <head>
     <meta http-equiv="Content Type" content="text/html; charset=UTF-8">
     <title> Insert title here </title>
+
+
+    <style type="text/css">
+        .errors{
+            color: red;
+            position: fixed;
+            text-align: left;
+            margin-left: 30px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -17,6 +28,7 @@
 
     <label> Enter your Email </label>
     <form:input path="userEmail" />
+    <form:errors path = "userEmail" cssClass = "errors" />
     <input type="submit" value="send" />
 
 </form:form>
