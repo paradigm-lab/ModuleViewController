@@ -9,7 +9,7 @@ public class MyWebsiteController {
     @RequestMapping("/showInfo")
     public String showWebsiteInfo() {
 
-        return "index";
+        return "index2";
     }
 
 }
