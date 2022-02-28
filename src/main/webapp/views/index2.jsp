@@ -4,5 +4,9 @@
     <h1 align="center"> Using @ModelAttribute Method Level : How, Why, When</h1>
     <hr />
 
+    Website Name: ${websiteInfo.websiteName}
+    <br />
+    Website Category: ${websiteInfo.websiteCategory}
+
 </body>
 </html>
