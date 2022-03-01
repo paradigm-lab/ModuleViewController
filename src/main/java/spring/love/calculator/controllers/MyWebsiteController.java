@@ -9,7 +9,7 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 @Controller
 public class MyWebsiteController {
 
-    @ModelAttribute
+    @ModelAttribute("websiteInfo")
     public WebsiteInfoDTO getWebsiteInfoDTO() {
 
         System.out.println("@ModelAttribute : Inside getWebsiteInfoDTO() ");
@@ -25,6 +25,10 @@ public class MyWebsiteController {
     public String showWebsiteInfo(Model model) {
 
         System.out.println("@RequestMapping : Inside showWebsiteInfo() ");
+
+        WebsiteInfoDTO websiteInfoDTO = (WebsiteInfoDTO) model.getAttribute("websiteInfo");
+        System.out.println(websiteInfoDTO.getWebsiteName());
+        System.out.println(websiteInfoDTO.getWebsiteCategory());
 
         return "index2";
     }
