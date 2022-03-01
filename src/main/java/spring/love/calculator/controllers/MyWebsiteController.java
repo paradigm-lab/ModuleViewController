@@ -2,13 +2,17 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.WebsiteInfoDTO;
 
 @Controller
 public class MyWebsiteController {
 
+    @ModelAttribute
     public WebsiteInfoDTO getWebsiteInfoDTO() {
+
+        System.out.println("@ModelAttribute : Inside getWebsiteInfoDTO() ");
 
         WebsiteInfoDTO websiteInfoDTO = new WebsiteInfoDTO();
         websiteInfoDTO.setWebsiteName("kwawingu.com");
@@ -20,6 +24,7 @@ public class MyWebsiteController {
     @RequestMapping("/showInfo")
     public String showWebsiteInfo(Model model) {
 
+        System.out.println("@RequestMapping : Inside showWebsiteInfo() ");
 
         return "index2";
     }
@@ -27,6 +32,7 @@ public class MyWebsiteController {
     @RequestMapping("/showCompanyInfo")
     public String showCompanyInfo(Model model) {
 
+        System.out.println("@RequestMapping : Inside showCompanyInfo() ");
 
         return "index2";
     }
