@@ -35,6 +35,7 @@ public class MyWebsiteController {
         return "index2";
     }
 
+    // @ModelAttribute inside method argument doesn't create objects, when a model object is already available
     @RequestMapping("/showCompanyInfo")
     public String showCompanyInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
