@@ -12,11 +12,13 @@ public class MyWebsiteController {
     @ModelAttribute("websiteInfo")
     public WebsiteInfoDTO getWebsiteInfoDTO() {
 
+        System.out.println("************************");
         System.out.println("@ModelAttribute : Inside getWebsiteInfoDTO() ");
 
         WebsiteInfoDTO websiteInfoDTO = new WebsiteInfoDTO();
         websiteInfoDTO.setWebsiteName("kwawingu.com");
         websiteInfoDTO.setWebsiteCategory("Cloud Services");
+        System.out.println("************************");
 
         return websiteInfoDTO;
     }
@@ -34,9 +36,11 @@ public class MyWebsiteController {
     }
 
     @RequestMapping("/showCompanyInfo")
-    public String showCompanyInfo(Model model) {
+    public String showCompanyInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
         System.out.println("@RequestMapping : Inside showCompanyInfo() ");
+        System.out.println(websiteInfoDTO.getWebsiteName());
+        System.out.println(websiteInfoDTO.getWebsiteCategory());
 
         return "index2";
     }
