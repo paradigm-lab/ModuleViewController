@@ -20,4 +20,12 @@ public class MyWebsiteController {
         return "index2";
     }
 
+    @RequestMapping("/showCompanyInfo")
+    public String showCompanyInfo(Model model) {
+
+        
+
+        return "index2";
+    }
+
 }
