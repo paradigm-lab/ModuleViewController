@@ -8,14 +8,18 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 @Controller
 public class MyWebsiteController {
 
-    @RequestMapping("/showInfo")
-    public String showWebsiteInfo(Model model) {
+    public WebsiteInfoDTO getWebsiteInfoDTO() {
 
         WebsiteInfoDTO websiteInfoDTO = new WebsiteInfoDTO();
         websiteInfoDTO.setWebsiteName("kwawingu.com");
         websiteInfoDTO.setWebsiteCategory("Cloud Services");
 
-        model.addAttribute("websiteInfo", websiteInfoDTO);
+        return websiteInfoDTO;
+    }
+
+    @RequestMapping("/showInfo")
+    public String showWebsiteInfo(Model model) {
+
 
         return "index2";
     }
@@ -23,7 +27,6 @@ public class MyWebsiteController {
     @RequestMapping("/showCompanyInfo")
     public String showCompanyInfo(Model model) {
 
-        
 
         return "index2";
     }
