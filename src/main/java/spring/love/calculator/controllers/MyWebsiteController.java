@@ -2,11 +2,13 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.WebsiteInfoDTO;
 
 @Controller
+@ControllerAdvice
 public class MyWebsiteController {
 
     @ModelAttribute("websiteInfo")
