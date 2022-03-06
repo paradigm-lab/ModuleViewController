@@ -10,7 +10,6 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 @SessionAttributes("websiteInfo")
 public class MyWebsiteController {
 
-    /*
     @ModelAttribute("websiteInfo")
     public WebsiteInfoDTO getWebsiteInfoDTO() {
 
@@ -24,19 +23,18 @@ public class MyWebsiteController {
 
         return websiteInfoDTO;
     }
-   */
 
     @RequestMapping("/showInfo")
     public String showWebsiteInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
         System.out.println("@RequestMapping : Inside showWebsiteInfo() ");
 
-        websiteInfoDTO.setWebsiteName("SubKwawingu.com");
-        websiteInfoDTO.setWebsiteCategory("Cloud Computing");
+        // websiteInfoDTO.setWebsiteName("SubKwawingu.com");
+        // websiteInfoDTO.setWebsiteCategory("Cloud Computing");
 
         // WebsiteInfoDTO websiteInfoDTO = (WebsiteInfoDTO) model.getAttribute("websiteInfo");
-        // System.out.println(websiteInfoDTO.getWebsiteName());
-        // System.out.println(websiteInfoDTO.getWebsiteCategory());
+        System.out.println(websiteInfoDTO.getWebsiteName());
+        System.out.println(websiteInfoDTO.getWebsiteCategory());
 
         return "index2";
     }
