@@ -9,7 +9,7 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 public class TestController {
 
     @RequestMapping("/test")
-    public String testModelAttribute(@ModelAttribute("website") WebsiteInfoDTO websiteInfoDTO) {
+    public String testModelAttribute(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
         System.out.println("@RequestMapping : inside testModelAttribute()");
 
         System.out.println(websiteInfoDTO.getWebsiteName());
