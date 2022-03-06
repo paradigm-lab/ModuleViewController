@@ -16,7 +16,7 @@ public class TestController {
         System.out.println(websiteInfoDTO.getWebsiteCategory());
 
 
-        return "index";
+        return "index2";
     }
 
 }
