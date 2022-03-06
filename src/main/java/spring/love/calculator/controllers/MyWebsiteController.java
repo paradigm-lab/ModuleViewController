@@ -2,15 +2,15 @@ package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import spring.love.calculator.api.WebsiteInfoDTO;
 
 @Controller
 @ControllerAdvice(assignableTypes = TestController.class)
+@SessionAttributes("websiteInfo")
 public class MyWebsiteController {
 
+    /*
     @ModelAttribute("websiteInfo")
     public WebsiteInfoDTO getWebsiteInfoDTO() {
 
@@ -24,15 +24,19 @@ public class MyWebsiteController {
 
         return websiteInfoDTO;
     }
+   */
 
     @RequestMapping("/showInfo")
     public String showWebsiteInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
         System.out.println("@RequestMapping : Inside showWebsiteInfo() ");
 
+        websiteInfoDTO.setWebsiteName("SubKwawingu.com");
+        websiteInfoDTO.setWebsiteCategory("Cloud Computing");
+
         // WebsiteInfoDTO websiteInfoDTO = (WebsiteInfoDTO) model.getAttribute("websiteInfo");
-        System.out.println(websiteInfoDTO.getWebsiteName());
-        System.out.println(websiteInfoDTO.getWebsiteCategory());
+        // System.out.println(websiteInfoDTO.getWebsiteName());
+        // System.out.println(websiteInfoDTO.getWebsiteCategory());
 
         return "index2";
     }
