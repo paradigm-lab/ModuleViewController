@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.WebsiteInfoDTO;
 
 @Controller
-@ControllerAdvice
+@ControllerAdvice(assignableTypes = TestController.class)
 public class MyWebsiteController {
 
     @ModelAttribute("websiteInfo")
