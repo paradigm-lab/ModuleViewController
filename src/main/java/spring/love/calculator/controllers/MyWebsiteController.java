@@ -9,7 +9,7 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 @Controller
 public class MyWebsiteController {
 
-    // @ModelAttribute("websiteInfo")
+    @ModelAttribute("websiteInfo")
     public WebsiteInfoDTO getWebsiteInfoDTO() {
 
         System.out.println("************************");
