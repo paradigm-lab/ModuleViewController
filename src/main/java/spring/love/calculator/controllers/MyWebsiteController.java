@@ -24,6 +24,13 @@ public class MyWebsiteController {
         return websiteInfoDTO;
     }
 
+    @ModelAttribute("header")
+    public String websiteHeader() {
+
+        System.out.println("inside model attribute method: websiteHeader");
+        return "Kwawingu.com";
+    }
+
     @RequestMapping("/showInfo")
     public String showWebsiteInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
