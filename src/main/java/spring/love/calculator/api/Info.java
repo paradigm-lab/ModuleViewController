@@ -1,5 +1,8 @@
 package spring.love.calculator.api;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Info {
     private String serverIp = "122:122:333:22";
 
