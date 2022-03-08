@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import spring.love.calculator.api.WebsiteInfoDTO;
 
 @Controller
-@ControllerAdvice(assignableTypes = TestController.class)
+// @ControllerAdvice(basePackages = {"spring.love.calculator.controllers", "spring.love.calculator.api"})
+@ControllerAdvice(assignableTypes = {TestController.class, SecondController.class})
 @SessionAttributes("websiteInfo")
 public class MyWebsiteController {
 
