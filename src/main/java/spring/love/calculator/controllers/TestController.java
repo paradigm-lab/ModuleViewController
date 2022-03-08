@@ -1,5 +1,6 @@
 package spring.love.calculator.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +11,7 @@ import spring.love.calculator.api.WebsiteInfoDTO;
 @Controller
 public class TestController {
 
+    @Autowired
     Info serverInfo;
 
     @RequestMapping("/test")
@@ -27,9 +29,15 @@ public class TestController {
 
 
     @ExceptionHandler(value = NullPointerException.class)
-    public String handlerNullPointerException() {
+    public String handleNullPointerException() {
 
         return "nullPointerException";
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    public String handleAnyException() {
+
+        return "exception";
     }
 
 }
