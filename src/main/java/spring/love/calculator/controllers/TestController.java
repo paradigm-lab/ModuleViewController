@@ -31,19 +31,4 @@ public class TestController {
 
         return "index2";
     }
-
-
-    @ExceptionHandler(value = NullPointerException.class)
-    public String handleNullPointerException() {
-
-        return "nullPointerException";
-    }
-
-    // Generic Method
-    @ExceptionHandler(value = Exception.class)
-    public String handleAnyException() {
-
-        return "exception";
-    }
-
 }
