@@ -24,13 +24,6 @@ public class MyWebsiteController {
         return websiteInfoDTO;
     }
 
-    @ModelAttribute("header123")
-    public String websiteHeader() {
-
-        System.out.println("inside model attribute method: websiteHeader");
-        return "Kwawingu.com";
-    }
-
     @RequestMapping("/showInfo")
     public String showWebsiteInfo(@ModelAttribute("websiteInfo") WebsiteInfoDTO websiteInfoDTO) {
 
@@ -46,17 +39,6 @@ public class MyWebsiteController {
         return "index2";
     }
 
-    /*
-    @RequestMapping("/header")
-    public String getHeader(@ModelAttribute("header123") String header) {
-
-        System.out.println("@RequestMapping : Inside getHeader() ");
-
-        System.out.println(header);
-
-        return "index2";
-    }
-    */
 
     // @ModelAttribute inside method argument doesn't create objects, when a model object is already available
     @RequestMapping("/showCompanyInfo")

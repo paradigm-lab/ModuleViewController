@@ -7,9 +7,5 @@
     Website Name: ${websiteInfo.websiteName}
     <br />
     Website Category: ${websiteInfo.websiteCategory}
-    <br />
-    Website Header: ${header123}
-    <br />
-    Website Header: ${header}
 </body>
 </html>
