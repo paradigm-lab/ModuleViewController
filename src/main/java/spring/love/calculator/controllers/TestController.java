@@ -1,6 +1,7 @@
 package spring.love.calculator.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.love.calculator.api.Info;
@@ -22,6 +23,13 @@ public class TestController {
         System.out.println("Ip address of the Server is: " + serverInfo.getServerIp());
 
         return "index2";
+    }
+
+
+    @ExceptionHandler(value = NullPointerException.class)
+    public String handlerNullPointerException() {
+
+        return "nullPointerException";
     }
 
 }
