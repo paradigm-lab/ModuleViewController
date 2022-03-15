@@ -11,6 +11,7 @@
 <body>
 
     <h1 align="center" >Root Page</h1>
+    <a href="/showHelloWorld">go to hello wold page</a>
 
 </body>
 </html>
