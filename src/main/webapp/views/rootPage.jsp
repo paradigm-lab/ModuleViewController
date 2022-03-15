@@ -10,7 +10,7 @@
 
 <body>
 
-    <h1>Root Page</h1>
+    <h1 align="center" >Root Page</h1>
 
 </body>
 </html>
