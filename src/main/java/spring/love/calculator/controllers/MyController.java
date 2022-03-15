@@ -13,4 +13,9 @@ public class MyController {
         return "rootPage";
     }
 
+    @RequestMapping("/showHelloWorld")
+    public String showHelloWorldForm() {
+
+        return "helloworldform";
+    }
 }
