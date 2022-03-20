@@ -11,7 +11,7 @@
 <body>
 
     <h1 align="center">Root Page</h1>
-    <a href="/mvc/app/showHelloWorld">go to hello wold page</a>
+    <a href="${pageContext.request.contextPath}/mvc/app/showHelloWorld">go to hello wold page</a>
 
 </body>
 </html>
