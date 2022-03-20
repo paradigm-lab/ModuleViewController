@@ -8,13 +8,12 @@
 </head>
 
 <body>
-<form>
 
-    <h1>Hello World Page</h1>
+<h1>Hello World Page</h1>
 
+<form action="process-helloworld">
     <label>Your Name: </label>
     <input type="text" name="yn" />
-
     <input type="submit" />
 </form>
 </body>
