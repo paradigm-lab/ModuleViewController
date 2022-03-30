@@ -1,6 +1,7 @@
 package spring.love.calculator.api;
 
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.annotation.RequestScope;
 
 @Component("myBean")
-@RequestScope
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class MyBean {
 
     // Class Property
